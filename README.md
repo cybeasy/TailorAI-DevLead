@@ -8,6 +8,8 @@
 [![Status](https://img.shields.io/badge/status-ready-success.svg)](#)
 [![Language](https://img.shields.io/badge/language-Markdown-0891b2.svg)](#)
 [![Stack](https://img.shields.io/badge/stack-agnostic-6d28d9.svg)](#)
+[![IDE](https://img.shields.io/badge/IDE-all%20supported-blueviolet.svg)](#)
+[![LLM](https://img.shields.io/badge/LLM-all%20models-10b981.svg)](#)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
 
 </div>
@@ -16,7 +18,7 @@
 
 ## 📖 Overview
 
-**TailorAI DevLead Workspace** is a stack-agnostic, language-agnostic governance layer powered by [TailorAi.me](https://tailorai.me). You drop it into **any** software repository to instantiate a `.tailorai/` directory that transforms an AI coding agent (Claude, GPT, Cursor, etc.) into an effective **Technical Lead** that understands, refactors, and extends your codebase cleanly — instead of editing blindly.
+**TailorAI DevLead Workspace** is a stack-agnostic, language-agnostic governance layer powered by [TailorAi.me](https://tailorai.me). You drop it into **any** software repository to instantiate a `.tailorai/` directory that transforms any AI coding agent into an effective **Technical Lead** — fully compatible with **all IDEs** (Antigravity, VS Code, Cursor, Windsurf, JetBrains, Xcode, Neovim, CLI, etc.) and **all AI models** (Claude, GPT, Gemini, DeepSeek, Llama, etc.).
 
 The template solves the three biggest problems of AI-assisted development:
 
@@ -32,6 +34,7 @@ This workspace fixes all three with a **Context Router**, **Atomic Execution**, 
 
 ## ✨ Key Features
 
+- **🌐 Universal IDE & AI Model Support** — works seamlessly across **all IDEs** (Antigravity, VS Code, Cursor, Windsurf, JetBrains, Xcode, Neovim, etc.) and **all AI models / LLMs** (Claude, GPT-4o, Gemini, DeepSeek, Llama, Ollama, etc.).
 - **🧭 Context Router** — the agent loads only 2–3 task-relevant files per request. Hard cap protects your token budget and reasoning quality.
 - **⚛️ Atomic Execution** — every task moves through an 8-stage cycle (clarify → task file → register → present → execute → document → verify → stop), gated by explicit user approval at each step.
 - **🧠 Persistent Knowledge Base** — `PROJECT_MAP.md` acts as cumulative memory. Past decisions and completed tasks survive across sessions.
@@ -117,7 +120,7 @@ TailorAI-DevLead/
 ### Prerequisites
 
 - A software repository you want to govern (any language/stack).
-- An AI coding agent (e.g., Claude, GPT-4, Cursor, Copilot Chat) capable of reading and writing files.
+- An AI coding agent running on **any AI model** (Claude, GPT-4o, Gemini, DeepSeek, Llama, etc.) inside **any IDE/editor** (Antigravity, VS Code, Cursor, Windsurf, JetBrains, Neovim, CLI, etc.) capable of reading and writing files.
 - (Optional) Git installed — the workflow is designed around atomic commits.
 
 ### Step 1 — Clone the repository
@@ -359,7 +362,7 @@ Contributions are welcome! Because this project governs agent behavior, changes 
 <details>
 <summary><b>Does this depend on a specific AI model or IDE?</b></summary>
 
-No. It's pure Markdown. Any AI agent that can read and write files (Claude, GPT, Cursor, Copilot Chat, Continue, Aider, etc.) can execute the protocols. There are no bash scripts, no plugins, and no runtime dependencies.
+No. It is 100% model-agnostic and IDE-agnostic. It works on **all IDEs** (Antigravity, VS Code, Cursor, Windsurf, JetBrains, Xcode, Neovim, CLI, etc.) and with **all AI models / LLMs** (Claude, GPT-4o, Gemini, DeepSeek, Llama, Ollama, etc.). Because it is pure Markdown, any AI agent that can read and write files can execute the protocols without bash scripts, plugins, or runtime dependencies.
 </details>
 
 <details>

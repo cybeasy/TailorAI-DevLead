@@ -39,7 +39,7 @@ Inspect the project repository and generate an initial technical profile report.
 2. **Inspect Directory Layout:** Scan top 2 levels of project hierarchy.
 
 3. **Check for Legacy Agent Files:** Search for pre-existing agent files or folders:
-   - `Ai/`, `ai/`, `.ai/`, `docs/agent/`, `AGENT.md`, `agent.md`, etc.
+   - `Ai/`, `ai/`, `.ai/`, `Ai_old/`, `ai_old/`, `docs/agent/`, `AGENT.md`, `agent.md`, `.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `AGENTS.md`, `.agents/`, `.gemini/`, `.claude/`, etc.
 
 4. **Generate Report** in `Ai/Architecture/Project_Scan_Report.md`:
 

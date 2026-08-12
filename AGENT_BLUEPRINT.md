@@ -1,4 +1,4 @@
-# AI Agent Workspace Template — Architecture Blueprint & Knowledge Base
+# Cybeasy TailorAI-DevLead — Architecture Blueprint & Knowledge Base
 
 > **Master Knowledge Base:** Primary architecture documentation for the `TailorAI-DevLead` project.
 > This is the **What + Why** reference — it documents the system structure, the design decisions behind it, and the full placeholder contract.
@@ -10,7 +10,7 @@
 
 ## 1. System Vision
 
-The **AI Agent Workspace** is a stack-agnostic, language-agnostic template that instantiates an `Ai/` governance directory inside any software repository. This workspace transforms the AI Agent into an effective **Technical Lead** that understands, refactors, and extends the codebase cleanly.
+The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnostic template that instantiates an `Ai/` governance directory inside any software repository. Developed by **Cybeasy** ([cybeasy.com](https://cybeasy.com/)) for **TailorAI** ([tailorai.me](https://tailorai.me/)), this workspace transforms the AI Agent into an effective **Technical Lead** that understands, refactors, and extends the codebase cleanly.
 
 ### Core Principles
 1. **Context Isolation (Context Router):** The AI Agent loads only 2-3 task-relevant files per request to optimize token usage.

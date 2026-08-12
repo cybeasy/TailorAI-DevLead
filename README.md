@@ -1,9 +1,11 @@
 <div align="center">
 
-# AI Agent Workspace Template
+# Cybeasy TailorAI-DevLead
 
 ### Turn any AI coding agent into a disciplined Technical Lead for your repository.
 
+[![Website](https://img.shields.io/badge/TailorAI-tailorai.me-blue.svg)](https://tailorai.me/)
+[![Company](https://img.shields.io/badge/Company-Cybeasy.com-0891b2.svg)](https://cybeasy.com/)
 [![Status](https://img.shields.io/badge/status-ready-success.svg)](#)
 [![Language](https://img.shields.io/badge/language-Markdown-0891b2.svg)](#)
 [![Stack](https://img.shields.io/badge/stack-agnostic-6d28d9.svg)](#)
@@ -400,9 +402,20 @@ Yes. The template is just files. Nothing is transmitted anywhere — your AI age
 
 ---
 
+## 📬 Contact & Support
+
+**TailorAI** is developed and maintained by **Cybeasy**.
+
+- 🌐 **TailorAI Website:** [https://tailorai.me/](https://tailorai.me/)
+- 🏢 **Company Website:** [https://cybeasy.com/](https://cybeasy.com/)
+- ✉️ **Email:** [info@cybeasy.com](mailto:info@cybeasy.com)
+- 📞 **Phone / WhatsApp:** [+201030722286](tel:+201030722286)
+
+---
+
 ## 📄 License
 
-Released under the **MIT License**. See the `LICENSE` file for details.
+Released under the **MIT License**. Copyright (c) 2026 **Cybeasy**. See the `LICENSE` file for details.
 
 You are free to copy, modify, and use this template in any project, commercial or otherwise.
 
@@ -410,7 +423,7 @@ You are free to copy, modify, and use this template in any project, commercial o
 
 <div align="center">
 
-**[⬆ Back to top](#ai-agent-workspace-template)**
+**[⬆ Back to top](#cybeasy-tailorai-devlead)**
 
 Built to make AI-assisted development **disciplined, traceable, and stack-agnostic.**
 

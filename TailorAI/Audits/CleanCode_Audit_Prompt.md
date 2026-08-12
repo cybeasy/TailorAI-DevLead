@@ -4,7 +4,7 @@
 You are acting as an Autonomous Technical Lead and Senior Software Architect for **{{PROJECT_NAME}}**. Your task is to perform an analytical, read-only code quality audit of the repository against our clean code principles.
 
 ## Mandatory Audit Steps:
-1. **Consult Governance Standards:** Read `Ai/Agent.md` and `Ai/Skills/CleanCode_Skill.md` to internalize our core clean code rules.
+1. **Consult Governance Standards:** Read `TailorAI/Agent.md` and `TailorAI/Skills/CleanCode_Skill.md` to internalize our core clean code rules.
 2. **Repository Scan:** Scan key application directories (controllers, views, components, services, route handlers).
 3. **Inspect for Violations:**
    - **SRP Method Decomposition:** Identify monolithic methods or functions exceeding 20 lines that perform multiple responsibilities.

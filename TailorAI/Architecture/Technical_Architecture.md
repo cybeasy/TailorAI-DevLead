@@ -17,7 +17,7 @@
 ```text
 project-root/
 ├── ...
-└── Ai/
+└── TailorAI/
 ```
 
 ## 4. Key Design Patterns

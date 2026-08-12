@@ -1,13 +1,13 @@
 # init-agent.md — AI Agent Workspace Setup Protocol
 
-> **Master Setup Protocol:** Use this document to initialize the `Ai/` governance workspace in any new or existing software repository.
+> **Master Setup Protocol:** Use this document to initialize the `TailorAI/` governance workspace in any new or existing software repository.
 > Contains 6 numbered steps (0 to 5). Execute step-by-step: prompt the AI Agent with **"Read `init-agent.md` and execute Step X"**.
 
 ---
 
 ## How to Use
 
-1. Copy the `Ai/` directory and `init-agent.md` into your project root.
+1. Copy the `TailorAI/` directory and `init-agent.md` into your project root.
 2. Open an AI Agent session and state: **"Read `init-agent.md` and execute Step 0"**.
 3. After reviewing each step's output, proceed by stating: **"Execute Step X"**.
 
@@ -39,9 +39,9 @@ Inspect the project repository and generate an initial technical profile report.
 2. **Inspect Directory Layout:** Scan top 2 levels of project hierarchy.
 
 3. **Check for Legacy Agent Files:** Search for pre-existing agent files or folders:
-   - `Ai/`, `ai/`, `.ai/`, `Ai_old/`, `ai_old/`, `docs/agent/`, `AGENT.md`, `agent.md`, `.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `AGENTS.md`, `.agents/`, `.gemini/`, `.claude/`, etc.
+   - `TailorAI/`, `ai/`, `.ai/`, `Ai_old/`, `ai_old/`, `docs/agent/`, `AGENT.md`, `agent.md`, `.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `AGENTS.md`, `.agents/`, `.gemini/`, `.claude/`, etc.
 
-4. **Generate Report** in `Ai/Architecture/Project_Scan_Report.md`:
+4. **Generate Report** in `TailorAI/Architecture/Project_Scan_Report.md`:
 
 ```markdown
 # Project Scan Report
@@ -63,17 +63,17 @@ Inspect the project repository and generate an initial technical profile report.
 5. **Present Report** to user and confirm correctness before proceeding.
 
 ### Deliverable:
-- `Ai/Architecture/Project_Scan_Report.md`
+- `TailorAI/Architecture/Project_Scan_Report.md`
 
 ---
 
 ## Step 1: Base Workspace Initialization
 
 ### Objective:
-Initialize core `Ai/` workspace files using detected project specifications from Step 0.
+Initialize core `TailorAI/` workspace files using detected project specifications from Step 0.
 
 ### Execution Instructions:
-1. **Read** `Ai/Architecture/Project_Scan_Report.md` (from Step 0).
+1. **Read** `TailorAI/Architecture/Project_Scan_Report.md` (from Step 0).
 2. **Inspect Project Manifests** to detect actual commands (e.g. `scripts` in `package.json` for test/dev commands, or `pytest`, `php artisan test`, `go test`, etc.).
 3. **Populate Dynamic Placeholders** across template files. The **complete token list** is documented in `AGENT_BLUEPRINT.md` §7 (Placeholder Contract). Replace every `{{TOKEN}}` you find during the scan. If a value cannot be auto-detected, **leave the token in place and flag it for manual completion** — never invent a value. Summary of tokens by group:
 
@@ -88,21 +88,21 @@ Initialize core `Ai/` workspace files using detected project specifications from
 
 | File | Action |
 |------|--------|
-| `Ai/Agent.md` | Replace variables and confirm core engineering principles |
-| `Ai/ACTIVE_TASKS.md` | Ready — Active tasks register |
-| `Ai/PROJECT_MAP.md` | Replace variables and link detected files |
-| `Ai/README.md` | Replace variables and format index |
-| `Ai/Protocols/*.md` | Replace placeholders with detected commands/specs |
-| `Ai/Architecture/Visual_Identity.md` | Populate tokens if detected, or defer to Step 2 |
-| `Ai/Skills/*.md` | Base universal skills ready |
-| `Ai/Audits/*.md` | Base universal audit prompts ready |
-| `Ai/Brand/Brand_Guide_Template.md` | Replace variables |
-| `Ai/Tasks/Task_Template.md` | Ready — Task file template |
+| `TailorAI/Agent.md` | Replace variables and confirm core engineering principles |
+| `TailorAI/ACTIVE_TASKS.md` | Ready — Active tasks register |
+| `TailorAI/PROJECT_MAP.md` | Replace variables and link detected files |
+| `TailorAI/README.md` | Replace variables and format index |
+| `TailorAI/Protocols/*.md` | Replace placeholders with detected commands/specs |
+| `TailorAI/Architecture/Visual_Identity.md` | Populate tokens if detected, or defer to Step 2 |
+| `TailorAI/Skills/*.md` | Base universal skills ready |
+| `TailorAI/Audits/*.md` | Base universal audit prompts ready |
+| `TailorAI/Brand/Brand_Guide_Template.md` | Replace variables |
+| `TailorAI/Tasks/Task_Template.md` | Ready — Task file template |
 
 5. **Report Summary** of created files and populated parameters.
 
 ### Deliverable:
-- Initialized `Ai/` governance workspace.
+- Initialized `TailorAI/` governance workspace.
 
 ---
 
@@ -112,7 +112,7 @@ Initialize core `Ai/` workspace files using detected project specifications from
 Fill in architectural specifications using the helper questionnaire.
 
 ### Execution Instructions:
-1. **Direct User** to review `Ai/Architecture/Architecture_Questions.md`.
+1. **Direct User** to review `TailorAI/Architecture/Architecture_Questions.md`.
 2. **Explain** that answering these questions populates:
    - `Technical_Architecture.md`
    - `PRD.md`
@@ -135,7 +135,7 @@ Fill in architectural specifications using the helper questionnaire.
    - Security rules
    - Architectural rules
    - Execution workflows
-4. **Compare against new `Ai/Agent.md`:**
+4. **Compare against new `TailorAI/Agent.md`:**
 
    | Condition | Action |
    |-----------|--------|
@@ -143,7 +143,7 @@ Fill in architectural specifications using the helper questionnaire.
    | Duplicate rule with identical meaning | ⏭️ Skip (already covered) |
    | Conflicting rule | ⚠️ **Present conflict to user for resolution** |
 
-5. **Generate Migration Report** in `Ai/Tasks/migration/step3_rules_migration_report.md`.
+5. **Generate Migration Report** in `TailorAI/Tasks/migration/step3_rules_migration_report.md`.
 
 ---
 
@@ -154,14 +154,14 @@ Fill in architectural specifications using the helper questionnaire.
 - Skip if no legacy task history exists.
 
 ### Execution Instructions:
-> Follow protocol documented in `Ai/Skills/Knowledge_Builder_Skill.md`.
+> Follow protocol documented in `TailorAI/Skills/Knowledge_Builder_Skill.md`.
 
-1. **Copy Legacy Directory** to `Ai/Archive_Legacy/`.
-2. **Create Queue** in `Ai/Tasks/migration/migration_queue.md`.
+1. **Copy Legacy Directory** to `TailorAI/Archive_Legacy/`.
+2. **Create Queue** in `TailorAI/Tasks/migration/migration_queue.md`.
 3. **Batch Process (2-3 files per iteration):**
    - Read uncompleted items `[ ]`.
-   - Convert tasks to standard format in `Ai/Tasks/[category]/`.
-   - Register completed tasks in `Ai/PROJECT_MAP.md`.
+   - Convert tasks to standard format in `TailorAI/Tasks/[category]/`.
+   - Register completed tasks in `TailorAI/PROJECT_MAP.md`.
    - Mark item `[x]` in `migration_queue.md`.
 4. **Resume Capability:** If interrupted, resume cleanly from the first remaining unchecked item.
 
@@ -173,7 +173,7 @@ Fill in architectural specifications using the helper questionnaire.
 Generate additional audit prompts and specialized skills matching the target project's tech stack.
 
 ### Execution Instructions:
-1. **Read** `Ai/Architecture/Project_Scan_Report.md` (Step 0) and `Technical_Architecture.md` (Step 2).
+1. **Read** `TailorAI/Architecture/Project_Scan_Report.md` (Step 0) and `Technical_Architecture.md` (Step 2).
 2. **Determine Stack-Specific Additions:**
 
    | Tech Stack | Suggested Skills | Suggested Audits |
@@ -187,7 +187,7 @@ Generate additional audit prompts and specialized skills matching the target pro
 
 3. **Present Recommendations** to user for approval.
 4. **Create Approved Files Only**.
-5. **Update `Ai/PROJECT_MAP.md`**.
+5. **Update `TailorAI/PROJECT_MAP.md`**.
 
 ---
 

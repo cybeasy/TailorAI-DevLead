@@ -10,7 +10,7 @@
 
 ## 1. System Vision
 
-The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnostic template that instantiates an `Ai/` governance directory inside any software repository. Developed by **Cybeasy** ([cybeasy.com](https://cybeasy.com/)) for **TailorAI** ([tailorai.me](https://tailorai.me/)), this workspace transforms the AI Agent into an effective **Technical Lead** that understands, refactors, and extends the codebase cleanly.
+The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnostic template that instantiates an `TailorAI/` governance directory inside any software repository. Developed by **Cybeasy** ([cybeasy.com](https://cybeasy.com/)) for **TailorAI** ([tailorai.me](https://tailorai.me/)), this workspace transforms the AI Agent into an effective **Technical Lead** that understands, refactors, and extends the codebase cleanly.
 
 ### Core Principles
 1. **Context Isolation (Context Router):** The AI Agent loads only 2-3 task-relevant files per request to optimize token usage.
@@ -21,17 +21,17 @@ The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnosti
 
 ## 2. Documentation Topology
 
-This template ships with **two master reference files** at the root, plus the runtime constitution inside `Ai/`. Understanding their split is essential for future maintenance.
+This template ships with **two master reference files** at the root, plus the runtime constitution inside `TailorAI/`. Understanding their split is essential for future maintenance.
 
 | File | Scope | Question it answers | Audience |
 |------|-------|----------------------|----------|
 | `AGENT_BLUEPRINT.md` (this file) | Architecture & design knowledge | **What** is the system + **Why** was it built this way? | Developers / maintainers |
 | `AGENT_STRATEGY.md` | Operational behavior & decisions | **How** does the agent behave + **When** does it act? | Developers / maintainers |
 | `init-agent.md` | Setup protocol (Steps 0-5) | **How is a workspace instantiated?** | Any AI Agent running setup |
-| `Ai/Agent.md` | Runtime constitution | **What rules bind the agent at runtime?** | The AI Agent itself |
+| `TailorAI/Agent.md` | Runtime constitution | **What rules bind the agent at runtime?** | The AI Agent itself |
 
 > [!IMPORTANT]
-> **Maintenance rule:** When you change *structure*, edit this file. When you change *behavior*, edit `AGENT_STRATEGY.md` (and usually `Ai/Agent.md` too). Keeping these separate is what makes future development safe.
+> **Maintenance rule:** When you change *structure*, edit this file. When you change *behavior*, edit `AGENT_STRATEGY.md` (and usually `TailorAI/Agent.md` too). Keeping these separate is what makes future development safe.
 
 ---
 
@@ -59,7 +59,7 @@ TailorAI-DevLead/
 ├── AGENT_STRATEGY.md                # Operational behavior & decision reference
 ├── init-agent.md                    # Master setup protocol (Steps 0-5)
 │
-└── Ai/                              # Governance Workspace Template
+└── TailorAI/                              # Governance Workspace Template
     ├── Agent.md                     # Universal AI constitution (stack-agnostic)
     ├── ACTIVE_TASKS.md              # In-progress tasks register
     ├── PROJECT_MAP.md               # Knowledge base master index
@@ -107,9 +107,9 @@ TailorAI-DevLead/
 ```
 
 > **Runtime-only directories** (created during setup, not shipped as part of the template):
-> - `Ai/Architecture/Project_Scan_Report.md` — generated in Step 0.
-> - `Ai/Archive_Legacy/` — created in Step 4 if legacy tasks exist.
-> - `Ai/Tasks/migration/migration_queue.md` + `migration_report.md` — created in Step 4.
+> - `TailorAI/Architecture/Project_Scan_Report.md` — generated in Step 0.
+> - `TailorAI/Archive_Legacy/` — created in Step 4 if legacy tasks exist.
+> - `TailorAI/Tasks/migration/migration_queue.md` + `migration_report.md` — created in Step 4.
 
 ---
 
@@ -119,12 +119,12 @@ This is the summary. The authoritative, executable steps live in `init-agent.md`
 
 | Step | Name | Mode | Deliverable |
 |------|------|------|-------------|
-| 0 | Pre-flight Project Scan | Automated | `Ai/Architecture/Project_Scan_Report.md` |
-| 1 | Base Workspace Initialization | Automated | Populated core `Ai/` files + placeholder replacement |
+| 0 | Pre-flight Project Scan | Automated | `TailorAI/Architecture/Project_Scan_Report.md` |
+| 1 | Base Workspace Initialization | Automated | Populated core `TailorAI/` files + placeholder replacement |
 | 2 | Architecture Documentation | Manual / Guided | `Technical_Architecture.md`, `PRD.md`, `Visual_Identity.md` |
-| 3 | Legacy Rules Migration | Interactive | `Ai/Tasks/migration/step3_rules_migration_report.md` |
-| 4 | Knowledge Base & Task Migration | Batch Processing | `Ai/Archive_Legacy/`, `migration_queue.md`, migrated tasks |
-| 5 | Stack-Specific Audits & Skills | Automated | Stack-specific skill + audit files in `Ai/Skills/` & `Ai/Audits/` |
+| 3 | Legacy Rules Migration | Interactive | `TailorAI/Tasks/migration/step3_rules_migration_report.md` |
+| 4 | Knowledge Base & Task Migration | Batch Processing | `TailorAI/Archive_Legacy/`, `migration_queue.md`, migrated tasks |
+| 5 | Stack-Specific Audits & Skills | Automated | Stack-specific skill + audit files in `TailorAI/Skills/` & `TailorAI/Audits/` |
 
 **Path variants:**
 - **New project (no legacy):** Step 0 → 1 → 2 → 5
@@ -239,15 +239,15 @@ A quick map of "who owns what" so maintainers know exactly where to make a chang
 
 | Concern | Owner File | Notes |
 |---------|-----------|-------|
-| Agent identity & critical rules | `Ai/Agent.md` §1 | Stack-agnostic; never embed stack specifics |
-| Context loading rules | `Ai/Agent.md` §2 | Behavioral detail in `AGENT_STRATEGY.md` §3 |
-| Task creation & execution | `Ai/Agent.md` §3 | 8-stage cycle in `AGENT_STRATEGY.md` §4 |
-| Skills slash commands | `Ai/Agent.md` §3C | Mapping in `AGENT_STRATEGY.md` §7.3 |
-| Architecture templates | `Ai/Architecture/*` | Filled in Step 1 (auto) + Step 2 (manual) |
-| Operational protocols | `Ai/Protocols/*` | Placeholder-driven; filled in Step 1 |
-| Universal skills | `Ai/Skills/*` | Reference knowledge; consulted on demand |
-| Audit prompts | `Ai/Audits/*` | Read-only diagnostics; never mutate code |
-| Task file format | `Ai/Tasks/Task_Template.md` | 3-section standard: Objective / Steps / Reality |
+| Agent identity & critical rules | `TailorAI/Agent.md` §1 | Stack-agnostic; never embed stack specifics |
+| Context loading rules | `TailorAI/Agent.md` §2 | Behavioral detail in `AGENT_STRATEGY.md` §3 |
+| Task creation & execution | `TailorAI/Agent.md` §3 | 8-stage cycle in `AGENT_STRATEGY.md` §4 |
+| Skills slash commands | `TailorAI/Agent.md` §3C | Mapping in `AGENT_STRATEGY.md` §7.3 |
+| Architecture templates | `TailorAI/Architecture/*` | Filled in Step 1 (auto) + Step 2 (manual) |
+| Operational protocols | `TailorAI/Protocols/*` | Placeholder-driven; filled in Step 1 |
+| Universal skills | `TailorAI/Skills/*` | Reference knowledge; consulted on demand |
+| Audit prompts | `TailorAI/Audits/*` | Read-only diagnostics; never mutate code |
+| Task file format | `TailorAI/Tasks/Task_Template.md` | 3-section standard: Objective / Steps / Reality |
 | Setup workflow | `init-agent.md` | The only file that mutates the workspace structure |
 
 ---

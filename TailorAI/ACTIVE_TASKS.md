@@ -4,7 +4,7 @@
 
 ## In Progress
 *(No active tasks currently)*
-<!-- Example: - [ ] `Ai/Tasks/feature/2026-08-12_user_authentication.md` -->
+<!-- Example: - [ ] `TailorAI/Tasks/feature/2026-08-12_user_authentication.md` -->
 
 ## Recently Completed (Pending Archive Confirmation)
 *(None)*

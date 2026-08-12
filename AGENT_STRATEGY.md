@@ -1,9 +1,9 @@
 # AGENT_STRATEGY.md — Operational Strategy & Behavior Reference
 
-> **Master Behavior Reference:** This document defines *how* the AI Agent behaves, reasons, and makes decisions while operating inside a repository governed by the `Ai/` workspace.
+> **Master Behavior Reference:** This document defines *how* the AI Agent behaves, reasons, and makes decisions while operating inside a repository governed by the `TailorAI/` workspace.
 > It is the behavioral counterpart to `AGENT_BLUEPRINT.md` (which defines *what* the system is and *why* it is built that way).
 >
-> **Audience:** Any developer or AI maintainer extending or refining the agent in the future. Read this before modifying any behavioral rule in `Ai/Agent.md` or any Skill/Protocol file.
+> **Audience:** Any developer or AI maintainer extending or refining the agent in the future. Read this before modifying any behavioral rule in `TailorAI/Agent.md` or any Skill/Protocol file.
 > Last Updated: 2026-08-12
 
 ---
@@ -20,7 +20,7 @@ This file captures the **operational strategy** of the AI Agent — the stable p
 > **Scope split:**
 > - `AGENT_BLUEPRINT.md` → **What** the system is + **Why** it was designed that way (structure, decisions, changelog).
 > - `AGENT_STRATEGY.md` → **How** the agent behaves + **When** it takes each action (runtime strategy, decision trees).
-> - `Ai/Agent.md` → The agent-facing **constitution** (the rules the agent reads at runtime). This strategy file is the human-facing explanation *behind* that constitution.
+> - `TailorAI/Agent.md` → The agent-facing **constitution** (the rules the agent reads at runtime). This strategy file is the human-facing explanation *behind* that constitution.
 
 ---
 
@@ -52,7 +52,7 @@ REQUEST RECEIVED
       │ YES → execute directly, load NO extra files. END.
       │ NO  ↓
       ▼
-[2] Open Ai/ACTIVE_TASKS.md — is there a related in-progress task?
+[2] Open TailorAI/ACTIVE_TASKS.md — is there a related in-progress task?
       │ YES → read that task file, continue its remaining [ ] steps.
       │ NO  ↓
       ▼
@@ -60,7 +60,7 @@ REQUEST RECEIVED
       │ YES → do NOT read PROJECT_MAP.md. Ask the user to clarify scope.
       │ NO  (searching past work / locating context) ↓
       ▼
-[4] Read Ai/PROJECT_MAP.md → locate the relevant task file or architecture doc.
+[4] Read TailorAI/PROJECT_MAP.md → locate the relevant task file or architecture doc.
       │
       ▼
 [5] Load ONLY that 1 task file (or 1 architecture/protocol doc).
@@ -98,7 +98,7 @@ Every non-trivial task moves through these stages. No stage is skipped.
 │ 1. CLARIFY     → If unclear, ambiguous, or multi-approach,  │
 │                  ASK the user first. Never assume.           │
 ├─────────────────────────────────────────────────────────────┤
-│ 2. TASK FILE   → Create Ai/Tasks/[cat]/YYYY-MM-DD_slug.md   │
+│ 2. TASK FILE   → Create TailorAI/Tasks/[cat]/YYYY-MM-DD_slug.md   │
 │                  using Task_Template.md. Self-contained.     │
 ├─────────────────────────────────────────────────────────────┤
 │ 3. REGISTER    → Add the new task file to ACTIVE_TASKS.md.   │
@@ -123,7 +123,7 @@ Every non-trivial task moves through these stages. No stage is skipped.
 
 ### 4.2 Category Matching Heuristic
 
-When creating a task file, the agent picks a category from `Ai/Tasks/[category]/`:
+When creating a task file, the agent picks a category from `TailorAI/Tasks/[category]/`:
 1. Check existing categories first (`feature`, `bugfix`, `refactor`, `backend`, `frontend`, `security`, `migration`).
 2. If an existing category fits, use it.
 3. Only create a **new** category directory if no existing one is semantically appropriate.
@@ -131,7 +131,7 @@ When creating a task file, the agent picks a category from `Ai/Tasks/[category]/
 ### 4.3 The "Documentation Before Code" Invariant
 
 > [!WARNING]
-> The agent must **never** write non-trivial code without a task file existing first. The only exemption is "truly simple fixes" (typos, color changes, trivial CSS). This invariant is what makes the `Ai/` workspace an audit trail rather than a decoration.
+> The agent must **never** write non-trivial code without a task file existing first. The only exemption is "truly simple fixes" (typos, color changes, trivial CSS). This invariant is what makes the `TailorAI/` workspace an audit trail rather than a decoration.
 
 ---
 
@@ -180,7 +180,7 @@ The agent defaults to asking whenever a decision has **any** of these traits:
 
 The agent treats legacy knowledge as precious and never destroys it:
 - **Step 3 (Rules):** Legacy rules are compared against `Agent.md`. Missing rules are appended; duplicates are skipped; conflicts are escalated to the user. A migration report is generated.
-- **Step 4 (Tasks):** The legacy directory is copied verbatim to `Ai/Archive_Legacy/` before any conversion. A `migration_queue.md` tracks progress so the workflow is **resumable** — interruption is safe.
+- **Step 4 (Tasks):** The legacy directory is copied verbatim to `TailorAI/Archive_Legacy/` before any conversion. A `migration_queue.md` tracks progress so the workflow is **resumable** — interruption is safe.
 
 > [!CAUTION]
 > **Resume design:** The migration queue uses `[ ]` / `[x]` checkboxes precisely so a crashed or interrupted session can resume from the first remaining `[ ]` without re-doing work or losing state. This resumability is a first-class requirement, not an afterthought.
@@ -191,7 +191,7 @@ The agent treats legacy knowledge as precious and never destroys it:
 
 ### 7.1 Skills (Reference Layer)
 
-Skills in `Ai/Skills/` are **reference knowledge** the agent consults on demand. They are not auto-loaded — they are pulled only when a task touches their domain.
+Skills in `TailorAI/Skills/` are **reference knowledge** the agent consults on demand. They are not auto-loaded — they are pulled only when a task touches their domain.
 
 | Skill | When Consulted |
 |-------|----------------|
@@ -204,7 +204,7 @@ Skills in `Ai/Skills/` are **reference knowledge** the agent consults on demand.
 
 ### 7.2 Audits (Verification Layer)
 
-Audits in `Ai/Audits/` are **read-only diagnostic prompts**. They never mutate code. Their contract:
+Audits in `TailorAI/Audits/` are **read-only diagnostic prompts**. They never mutate code. Their contract:
 - Read the relevant governance + skill files.
 - Scan the codebase within one domain.
 - Produce a structured report (violations, severity, remediation).
@@ -250,10 +250,10 @@ This section is the maintainer's compass. When extending the agent, follow these
 
 | You want to... | Modify this | Do NOT touch |
 |-----------------|-------------|--------------|
-| Change a behavioral rule (how the agent acts) | `Ai/Agent.md` + document rationale here in §5 | Base architecture |
-| Add a universal engineering skill | `Ai/Skills/` (new file) + register in `Agent.md` §C + here §7 | `Agent.md` core rules |
-| Add a stack-specific skill | `Ai/Skills/` (new file) + Step 5 table in `init-agent.md` | Base skills |
-| Add an audit type | `Ai/Audits/` (new file) + register in `README.md` | Skills |
+| Change a behavioral rule (how the agent acts) | `TailorAI/Agent.md` + document rationale here in §5 | Base architecture |
+| Add a universal engineering skill | `TailorAI/Skills/` (new file) + register in `Agent.md` §C + here §7 | `Agent.md` core rules |
+| Add a stack-specific skill | `TailorAI/Skills/` (new file) + Step 5 table in `init-agent.md` | Base skills |
+| Add an audit type | `TailorAI/Audits/` (new file) + register in `README.md` | Skills |
 | Change directory structure | `AGENT_BLUEPRINT.md` §4 + `README.md` tree + this file's references | Existing file paths |
 | Evolve the setup workflow | `init-agent.md` + `AGENT_BLUEPRINT.md` §3 | `Agent.md` runtime rules |
 | Add a new placeholder token | Template file + register in `AGENT_BLUEPRINT.md` §7 + `init-agent.md` Step 1 list | — |

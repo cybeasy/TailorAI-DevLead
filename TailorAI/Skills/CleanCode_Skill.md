@@ -11,7 +11,7 @@ Enforce clean code, DRY (Don't Repeat Yourself), KISS (Keep It Simple, Stupid), 
 
 ### 2. Elimination of Magic Values & Hardcoding
 - Extract all inline magic numbers, status strings, dropdown lists, and fixed configurations into constants, configuration files, or enums.
-- Use explicit status types/enums (e.g. `UIState = 'idle' | 'loading' | 'success' | 'error'`) rather than scattered boolean flags.
+- Use explicit status types/enums (e.g. a typed state value of `idle`, `loading`, `success`, `error`) rather than scattered boolean flags.
 
 ### 3. Guard Clauses & Control Flow
 - Use early exit guard clauses instead of deeply nested `if/else` branches.

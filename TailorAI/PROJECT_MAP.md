@@ -15,7 +15,7 @@
 *(Completed tasks will be linked here, categorized by module)*
 
 ### Initial Setup
-- [x] `TailorAI/Tasks/feature/YYYY-MM-DD_initial_project_setup.md` — Project initialized with AI Agent workspace
+- [ ] `TailorAI/Tasks/feature/YYYY-MM-DD_initial_project_setup.md` — Project initialized with AI Agent workspace *(example placeholder — create this task file during Step 1 setup)*
 
 ## 3. Strict AI Operating Protocol (Always Active)
 1. **Context Isolation:** NEVER attempt to read all folders at once. Consult this `PROJECT_MAP.md` first, then request to read ONLY the specific subdirectory relevant to the current task.

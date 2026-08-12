@@ -82,7 +82,7 @@ TailorAI-DevLead/
     ├── Audits/                      # Read-only audit prompts
     │   ├── CleanCode_Audit_Prompt.md
     │   ├── Security_Audit_Prompt.md
-    │   ├── Ai_Folder_Audit_Prompt.md
+    │   ├── TailorAI_Folder_Audit_Prompt.md
     │   └── Knowledge_Base_Verification.md
     │
     ├── Brand/
@@ -120,34 +120,21 @@ TailorAI-DevLead/
 - An AI coding agent (e.g., Claude, GPT-4, Cursor, Copilot Chat) capable of reading and writing files.
 - (Optional) Git installed — the workflow is designed around atomic commits.
 
-### Step 1 — Clone & Copy the workspace into your project
+### Step 1 — Clone the repository
 
-1. **Clone this repository:**
+Clone this repository alongside or inside your target project:
 
 ```bash
 git clone https://github.com/cybeasy/TailorAI-DevLead.git
 ```
 
-2. **Copy the `TailorAI/` directory and `init-agent.md` into your target project root:**
-
-```bash
-# From your project root (if TailorAI-DevLead was cloned alongside your project):
-cp -r ../TailorAI-DevLead/Ai ./
-cp ../TailorAI-DevLead/init-agent.md ./
-
-# Or if cloned directly inside your project folder:
-cp -r TailorAI-DevLead/Ai ./
-cp TailorAI-DevLead/init-agent.md ./
-rm -rf TailorAI-DevLead  # optional cleanup
-```
-
 ### Step 2 — Run the setup protocol
 
-Open an AI agent session in your project root and state:
+Open an AI agent session in your target project root and state:
 
-> **"Read `init-agent.md` and execute Step 0."**
+> **"Read `TailorAI-DevLead/init-agent.md` and execute Step 0."**
 
-The agent will scan your project manifests (`package.json`, `composer.json`, `requirements.txt`, `go.mod`, `pubspec.yaml`, `Gemfile`, `*.csproj`, etc.), inspect the directory layout, detect any legacy agent files, and generate a **Project Scan Report**. Review it, then proceed step-by-step:
+The agent will automatically scan your project, instantiate the `TailorAI/` governance workspace in your project root, populate placeholders, and generate a **Project Scan Report**. Review it, then proceed step-by-step:
 
 ```
 "Execute Step 1"   # Base workspace initialization + placeholder population
@@ -422,7 +409,7 @@ You are free to copy, modify, and use this template in any project, commercial o
 
 <div align="center">
 
-**[⬆ Back to top](#cybeasy-tailorai-devlead)**
+**[⬆ Back to top](#tailorai-devlead-workspace)**
 
 Built to make AI-assisted development **disciplined, traceable, and stack-agnostic.**
 

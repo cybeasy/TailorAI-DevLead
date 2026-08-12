@@ -58,7 +58,7 @@ Closes #
 
 ## 📝 Checklist Before Merge
 
-- [ ] Branch follows `Ai/Protocols/Git_Workflow.md` naming (`feat/`, `fix/`, `refactor/`, `chore/`).
+- [ ] Branch follows `TailorAI/Protocols/Git_Workflow.md` naming (`feat/`, `fix/`, `refactor/`, `chore/`).
 - [ ] Commit messages are atomic and reference the governance file in the body (`Ref: AGENT_BLUEPRINT.md §6`).
 - [ ] No hardcoded stack-specific values introduced in agnostic base files.
 - [ ] Any new `{{PLACEHOLDER}}` token is registered in `AGENT_BLUEPRINT.md` §7 **and** `init-agent.md` Step 1.

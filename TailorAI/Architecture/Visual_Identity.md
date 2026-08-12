@@ -1,6 +1,6 @@
 # Visual Identity & Design System — {{PROJECT_NAME}}
 
-> **Agent Directive:** Populate the values below automatically based on project inspection (CSS tokens / Tailwind config / Design Tokens) or via manual configuration.
+> **Agent Directive:** Populate the values below automatically based on project inspection (CSS custom properties / design-token config / utility-framework config) or via manual configuration. If a value cannot be auto-detected, **leave the token in place and flag it for manual completion** in Step 2 — never invent a value.
 
 ## 1. Color Palette & CSS Tokens
 | Token / Name | Hex / Value | Usage |

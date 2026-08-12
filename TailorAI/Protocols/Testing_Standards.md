@@ -13,7 +13,7 @@
 
 ## 3. Execution Commands
 - **Run Tests:** `{{TEST_COMMAND}}`
-- **Type Checking / Linting:** `{{TYPE_CHECK_COMMAND}}`
+- **Type Checking:** `{{TYPE_CHECK_COMMAND}}`
 
 ## 4. Test Verification Workflow
 Before marking any task as completed:

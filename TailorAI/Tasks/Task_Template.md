@@ -1,6 +1,6 @@
 # Task: [Clear Task Name]
 - **Date:** [YYYY-MM-DD]
-- **Category:** [feature/bugfix/refactor/backend/frontend/security]
+- **Category:** [feature/bugfix/refactor/backend/frontend/security/migration]
 - **Target Files:** [List of main files involved]
 
 ## 1. Objective

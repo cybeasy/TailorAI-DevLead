@@ -18,13 +18,16 @@ assignees: []
 
 <!-- Describe the approach you have in mind. Be as specific as possible about which file(s) would change. -->
 
-## 📁 Affed Files / Areas
+## 📁 Affected Files / Areas
 
 <!-- Check the maintenance matrix in AGENT_STRATEGY.md §9 to know where the change belongs. -->
-- [ ] `Ai/Agent.md` (behavioral rule)
-- [ ] `Ai/Skills/` (new skill)
-- [ ] `Ai/Audits/` (new audit)
-- [ ] `Ai/Protocols/` (protocol change)
+- [ ] `TailorAI/Agent.md` (behavioral rule)
+- [ ] `TailorAI/Architecture/` (architecture doc change)
+- [ ] `TailorAI/Skills/` (new skill)
+- [ ] `TailorAI/Audits/` (new audit)
+- [ ] `TailorAI/Protocols/` (protocol change)
+- [ ] `TailorAI/Brand/` (brand guide change)
+- [ ] `TailorAI/Tasks/` (task template change)
 - [ ] `init-agent.md` (setup workflow change)
 - [ ] `AGENT_BLUEPRINT.md` (structure / placeholder contract)
 - [ ] `AGENT_STRATEGY.md` (operational behavior)

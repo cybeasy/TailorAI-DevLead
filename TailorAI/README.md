@@ -70,11 +70,12 @@ TailorAI/
 │   ├── Security_Skill.md
 │   ├── Performance_Skill.md
 │   ├── Code_Review_Skill.md
-│   └── Designer_Skill.md
+│   ├── Designer_Skill.md
+│   └── Knowledge_Builder_Skill.md     # Step 4 legacy task conversion protocol
 ├── Audits/                             # Automated Audit Prompts
 │   ├── CleanCode_Audit_Prompt.md
 │   ├── Security_Audit_Prompt.md
-│   ├── Ai_Folder_Audit_Prompt.md
+│   ├── TailorAI_Folder_Audit_Prompt.md
 │   └── Knowledge_Base_Verification.md
 ├── Brand/                              # Brand Identity Assets
 │   └── Brand_Guide_Template.md
@@ -85,7 +86,8 @@ TailorAI/
     ├── refactor/
     ├── backend/
     ├── frontend/
-    └── security/
+    ├── security/
+    └── migration/                     # Legacy migration tasks & queue
 ```
 
 ---

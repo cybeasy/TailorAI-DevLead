@@ -12,7 +12,7 @@ Guide agents in writing high-performance, resource-efficient code with minimal l
 
 ### 2. View / Resource Loading & Assets
 - Implement lazy loading or asynchronous loading for non-critical dependencies and heavy modules.
-- Memoize or cache expensive calculations and calculations in memory.
+- Memoize or cache expensive calculations in memory.
 - Optimize media assets and network payloads for bandwidth efficiency.
 
 ### 3. Caching & Memory Management

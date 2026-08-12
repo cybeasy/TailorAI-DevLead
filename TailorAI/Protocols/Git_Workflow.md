@@ -24,6 +24,7 @@ Ref: TailorAI/Tasks/[category]/YYYY-MM-DD_[task_slug].md
 - `test`: Adding or modifying automated tests
 - `docs`: Documentation updates
 - `style`: Formatting or visual tweaks without logic changes
+- `chore`: Maintenance, dependency updates, or tooling tasks
 
 ## 3. Pull Request Guidelines
 - PR titles MUST match the task title.

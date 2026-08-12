@@ -7,8 +7,8 @@
 
 ## How to Use
 
-1. Copy the `TailorAI/` directory and `init-agent.md` into your project root.
-2. Open an AI Agent session and state: **"Read `init-agent.md` and execute Step 0"**.
+1. Clone this repository alongside or inside your target project root.
+2. Open an AI Agent session in your target project root and state: **"Read `TailorAI-DevLead/init-agent.md` and execute Step 0"**.
 3. After reviewing each step's output, proceed by stating: **"Execute Step X"**.
 
 ### New Project (No Legacy Agent):
@@ -73,9 +73,10 @@ Inspect the project repository and generate an initial technical profile report.
 Initialize core `TailorAI/` workspace files using detected project specifications from Step 0.
 
 ### Execution Instructions:
-1. **Read** `TailorAI/Architecture/Project_Scan_Report.md` (from Step 0).
-2. **Inspect Project Manifests** to detect actual commands (e.g. `scripts` in `package.json` for test/dev commands, or `pytest`, `php artisan test`, `go test`, etc.).
-3. **Populate Dynamic Placeholders** across template files. The **complete token list** is documented in `AGENT_BLUEPRINT.md` §7 (Placeholder Contract). Replace every `{{TOKEN}}` you find during the scan. If a value cannot be auto-detected, **leave the token in place and flag it for manual completion** — never invent a value. Summary of tokens by group:
+1. **Instantiate Workspace Directory:** If `./TailorAI/` does not exist in your target project root, copy the `TailorAI/` directory from `TailorAI-DevLead/TailorAI/` into `./TailorAI/`.
+2. **Read** `TailorAI/Architecture/Project_Scan_Report.md` (from Step 0).
+3. **Inspect Project Manifests** to detect actual commands (e.g. `scripts` in `package.json` for test/dev commands, or `pytest`, `php artisan test`, `go test`, etc.).
+4. **Populate Dynamic Placeholders** across template files. The **complete token list** is documented in `AGENT_BLUEPRINT.md` §7 (Placeholder Contract). Replace every `{{TOKEN}}` you find during the scan. If a value cannot be auto-detected, **leave the token in place and flag it for manual completion** — never invent a value. Summary of tokens by group:
 
    **Identity & Stack:** `{{PROJECT_NAME}}`, `{{TECH_STACK}}`, `{{BACKEND_FRAMEWORK}}`, `{{FRONTEND_FRAMEWORK}}`, `{{DATABASE}}`
    **Commands:** `{{TEST_COMMAND}}`, `{{LOCAL_DEV_COMMAND}}`, `{{TYPE_CHECK_COMMAND}}`, `{{LINT_TYPECHECK_COMMAND}}`
@@ -84,7 +85,7 @@ Initialize core `TailorAI/` workspace files using detected project specification
    **Testing Scopes:** `{{UNIT_TEST_SCOPE}}`, `{{INTEGRATION_TEST_SCOPE}}`, `{{E2E_TEST_SCOPE}}`
    **Deployment:** `{{STAGING_DEPLOY_PROCESS}}`, `{{PRODUCTION_DEPLOY_PROCESS}}`
    **Visual Identity / Design Tokens (if detected, else defer to Step 2):** `{{COLOR_PRIMARY}}`, `{{COLOR_SECONDARY}}`, `{{COLOR_ACCENT}}`, `{{COLOR_DANGER}}`, `{{COLOR_BG}}`, `{{COLOR_SURFACE}}`, `{{FONT_FAMILY}}`, `{{HEADING_SCALE}}`, `{{BODY_SCALE}}`, `{{LAYOUT_DIRECTION}}`, `{{GRID_BASELINE}}`, `{{BORDER_RADIUS_SCALE}}`
-4. **Create / Update** workspace files:
+5. **Create / Update** workspace files:
 
 | File | Action |
 |------|--------|
@@ -99,7 +100,7 @@ Initialize core `TailorAI/` workspace files using detected project specification
 | `TailorAI/Brand/Brand_Guide_Template.md` | Replace variables |
 | `TailorAI/Tasks/Task_Template.md` | Ready — Task file template |
 
-5. **Report Summary** of created files and populated parameters.
+6. **Report Summary** of created files and populated parameters.
 
 ### Deliverable:
 - Initialized `TailorAI/` governance workspace.

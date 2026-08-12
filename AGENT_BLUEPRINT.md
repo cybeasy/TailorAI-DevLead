@@ -89,7 +89,7 @@ TailorAI-DevLead/
     ├── Audits/                      # Universal audit prompts
     │   ├── CleanCode_Audit_Prompt.md   # Code quality audit
     │   ├── Security_Audit_Prompt.md    # Security vulnerability audit
-    │   ├── Ai_Folder_Audit_Prompt.md   # Workspace consistency audit
+    │   ├── TailorAI_Folder_Audit_Prompt.md   # Workspace consistency audit
     │   └── Knowledge_Base_Verification.md # KB map verification
     │
     ├── Brand/

@@ -1,0 +1,18 @@
+# Issue template configuration
+# Docs: https://docs.github.com/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository
+
+blank_issues_enabled: true
+contact_links:
+  - name: 📚 Read the documentation first
+    url: https://github.com/khaled/Ai_Template/blob/main/AGENT_BLUEPRINT.md
+    about: |
+      Before opening an issue, please consult the knowledge base:
+      • AGENT_BLUEPRINT.md — What the system is + Why (structure, decisions, placeholder contract)
+      • AGENT_STRATEGY.md — How the agent behaves + When (decision trees, 8-stage cycle)
+      • init-agent.md — The 6-step setup protocol
+      Many "bugs" are actually intended behavior documented there.
+  - name: 💬 Ask a question / open a discussion
+    url: https://github.com/khaled/Ai_Template/discussions
+    about: |
+      For usage questions ("how do I...?", "should I...?") rather than bug reports or feature requests,
+      please use GitHub Discussions instead of opening an issue.

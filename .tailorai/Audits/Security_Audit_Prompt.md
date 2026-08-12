@@ -4,7 +4,7 @@
 You are acting as an Autonomous Security Auditor for **{{PROJECT_NAME}}**. Your task is to perform an analytical, read-only security audit of the repository to identify vulnerabilities and data protection gaps.
 
 ## Mandatory Audit Steps:
-1. **Consult Security Protocol:** Read `TailorAI/Protocols/Security_Protocol.md` and `TailorAI/Skills/Security_Skill.md`.
+1. **Consult Security Protocol:** Read `.tailorai/Protocols/Security_Protocol.md` and `.tailorai/Skills/Security_Skill.md`.
 2. **Scan Codebase:** Inspect authentication middleware, authorization checks, public API endpoints, and database queries.
 3. **Inspect for Security Risks:**
    - **Unvalidated Input Boundaries:** Missing request body, query parameter, or payload validation.

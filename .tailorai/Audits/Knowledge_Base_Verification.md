@@ -4,18 +4,18 @@
 > **Audit type:** Read-only diagnostic. This audit follows the contract defined in `AGENT_STRATEGY.md` §7.2: it **reports findings, never fixes them**, and it **never mutates code or governance files** (including `PROJECT_MAP.md`). All remediation is left to a separate, user-approved task.
 
 ## Context
-You are the Lead Architect for **{{PROJECT_NAME}}**. Your task is to **verify** that the Knowledge Base is internally consistent: that `PROJECT_MAP.md` accurately reflects the real `TailorAI/Tasks/` directory, that every task file follows the standard template, and that no references are dangling. You produce a **findings report** — you do **not** edit anything.
+You are the Lead Architect for **{{PROJECT_NAME}}**. Your task is to **verify** that the Knowledge Base is internally consistent: that `PROJECT_MAP.md` accurately reflects the real `.tailorai/Tasks/` directory, that every task file follows the standard template, and that no references are dangling. You produce a **findings report** — you do **not** edit anything.
 
 ## Execution Steps (ALL READ-ONLY):
 
 ### 1. Internalize Mandates
-Read `TailorAI/Agent.md`, `TailorAI/Architecture/Technical_Architecture.md`, and `TailorAI/Architecture/PRD.md` to understand the standards every task file must satisfy.
+Read `.tailorai/Agent.md`, `.tailorai/Architecture/Technical_Architecture.md`, and `.tailorai/Architecture/PRD.md` to understand the standards every task file must satisfy.
 
 ### 2. Inventory the Real Tasks Directory
-Scan `TailorAI/Tasks/` (all subdirectories: `feature/`, `bugfix/`, `refactor/`, `backend/`, `frontend/`, `security/`, `migration/`, and any custom category). Build an authoritative list of every task file (`*.md`) that exists on disk, excluding `Task_Template.md` and any migration queue/report files in `migration/` (`migration_queue.md`, `step3_rules_migration_report.md`, `migration_report.md`).
+Scan `.tailorai/Tasks/` (all subdirectories: `feature/`, `bugfix/`, `refactor/`, `backend/`, `frontend/`, `security/`, `migration/`, and any custom category). Build an authoritative list of every task file (`*.md`) that exists on disk, excluding `Task_Template.md` and any migration queue/report files in `migration/` (`migration_queue.md`, `step3_rules_migration_report.md`, `migration_report.md`).
 
 ### 3. Inventory the Map References
-Parse `TailorAI/PROJECT_MAP.md` and extract every backtick-quoted task-file reference that points into `TailorAI/Tasks/` (e.g. `` `TailorAI/Tasks/feature/2026-08-12_xxx.md` ``). Build the list of paths the map *claims* exist.
+Parse `.tailorai/PROJECT_MAP.md` and extract every backtick-quoted task-file reference that points into `.tailorai/Tasks/` (e.g. `` `.tailorai/Tasks/feature/2026-08-12_xxx.md` ``). Build the list of paths the map *claims* exist.
 
 ### 4. Reconciliation Diff (the core verification)
 Compare the two inventories and emit three findings lists:
@@ -25,7 +25,7 @@ Compare the two inventories and emit three findings lists:
 - **🔴 `orphaned_in_active`** — a task file referenced in `ACTIVE_TASKS.md` that does not exist on disk, or a task present in **both** `ACTIVE_TASKS.md` and `PROJECT_MAP.md` simultaneously (violates the two-register invariant: a task lives in exactly one register at a time).
 
 ### 5. Task Format Compliance Audit
-For every task file on disk, check it against `TailorAI/Tasks/Task_Template.md` (the 3-section standard: `## 1. Objective`, `## 2. Atomic Execution Steps` with `[ ]`/`[x]` checkboxes, `## 3. Implementation Reality & Audit Log`, plus the header fields Date/Category/Target Files). Flag:
+For every task file on disk, check it against `.tailorai/Tasks/Task_Template.md` (the 3-section standard: `## 1. Objective`, `## 2. Atomic Execution Steps` with `[ ]`/`[x]` checkboxes, `## 3. Implementation Reality & Audit Log`, plus the header fields Date/Category/Target Files). Flag:
 - **🔴 Malformed task file** — missing one of the 3 mandatory sections.
 - **🟡 Incomplete header** — missing Date, Category, or Target Files.
 - **🟡 Stale checkbox** — `[ ]` step under a task the map marks `[x]` completed (steps left unchecked despite completion), or vice-versa.

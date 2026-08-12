@@ -7,14 +7,14 @@
 - Chore/Maintenance: `chore/deps-update`
 
 ## 2. Commit Message Structure
-All commits MUST be structured atomically and reference the associated task file in `TailorAI/Tasks/`:
+All commits MUST be structured atomically and reference the associated task file in `.tailorai/Tasks/`:
 
 ```text
 type(scope): concise description of changes
 
 Detailed explanation of why the change was made, technical trade-offs, or decisions.
 
-Ref: TailorAI/Tasks/[category]/YYYY-MM-DD_[task_slug].md
+Ref: .tailorai/Tasks/[category]/YYYY-MM-DD_[task_slug].md
 ```
 
 ### Commit Types
@@ -28,5 +28,5 @@ Ref: TailorAI/Tasks/[category]/YYYY-MM-DD_[task_slug].md
 
 ## 3. Pull Request Guidelines
 - PR titles MUST match the task title.
-- Each PR must include a link to the corresponding `TailorAI/Tasks/` file.
+- Each PR must include a link to the corresponding `.tailorai/Tasks/` file.
 - All automated checks (linting, static analysis, unit tests) MUST pass before merging.

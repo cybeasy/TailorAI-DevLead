@@ -1,21 +1,21 @@
 # {{PROJECT_NAME}} — Knowledge Base Map (Master Index)
 
 ## 1. Core Foundations (Mandatory Context)
-- `TailorAI/Agent.md`: Core AI rules, identity, task creation protocols, and execution mandates.
-- `TailorAI/Architecture/Technical_Architecture.md`: System architecture, tech stack layout, and folder structure.
-- `TailorAI/Architecture/PRD.md`: Product requirements, user roles, and module scope.
-- `TailorAI/Architecture/Visual_Identity.md`: UI/UX design tokens, color palette, typography, and styling rules.
-- `TailorAI/Protocols/API_Contracts.md`: Standardized API responses, HTTP codes, and error formatting.
-- `TailorAI/Protocols/Security_Protocol.md`: Authentication, authorization, and data security.
-- `TailorAI/Protocols/Git_Workflow.md`: Branch naming, commit standards, and PR workflow.
-- `TailorAI/Protocols/Testing_Standards.md`: Unit & integration testing guidelines.
-- `TailorAI/Protocols/Deployment_Protocol.md`: Deployment procedures and CI/CD configuration.
+- `.tailorai/Agent.md`: Core AI rules, identity, task creation protocols, and execution mandates.
+- `.tailorai/Architecture/Technical_Architecture.md`: System architecture, tech stack layout, and folder structure.
+- `.tailorai/Architecture/PRD.md`: Product requirements, user roles, and module scope.
+- `.tailorai/Architecture/Visual_Identity.md`: UI/UX design tokens, color palette, typography, and styling rules.
+- `.tailorai/Protocols/API_Contracts.md`: Standardized API responses, HTTP codes, and error formatting.
+- `.tailorai/Protocols/Security_Protocol.md`: Authentication, authorization, and data security.
+- `.tailorai/Protocols/Git_Workflow.md`: Branch naming, commit standards, and PR workflow.
+- `.tailorai/Protocols/Testing_Standards.md`: Unit & integration testing guidelines.
+- `.tailorai/Protocols/Deployment_Protocol.md`: Deployment procedures and CI/CD configuration.
 
 ## 2. Modules & Completed Tasks Archive
 *(Completed tasks will be linked here, categorized by module)*
 
 ### Initial Setup
-- [ ] `TailorAI/Tasks/feature/YYYY-MM-DD_initial_project_setup.md` — Project initialized with AI Agent workspace *(example placeholder — create this task file during Step 1 setup)*
+- [ ] `.tailorai/Tasks/feature/YYYY-MM-DD_initial_project_setup.md` — Project initialized with AI Agent workspace *(example placeholder — create this task file during Step 1 setup)*
 
 ## 3. Strict AI Operating Protocol (Always Active)
 1. **Context Isolation:** NEVER attempt to read all folders at once. Consult this `PROJECT_MAP.md` first, then request to read ONLY the specific subdirectory relevant to the current task.

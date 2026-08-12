@@ -4,7 +4,7 @@
 Guide agents in creating polished, modern, accessible, and user-friendly user interfaces across web, mobile, or desktop platforms.
 
 ## Directives
-1. **Design Tokens:** Always consume predefined design tokens (`TailorAI/Architecture/Visual_Identity.md`) for colors, typography, and spacing.
+1. **Design Tokens:** Always consume predefined design tokens (`.tailorai/Architecture/Visual_Identity.md`) for colors, typography, and spacing.
 2. **Responsive Layouts:** Design mobile-first layouts that adapt fluidly across mobile, tablet, and desktop viewports.
 3. **User Feedback States:** Always implement clear visual feedback for interactive elements:
    - Idle / Normal state

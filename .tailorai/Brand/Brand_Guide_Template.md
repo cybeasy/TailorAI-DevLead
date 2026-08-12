@@ -11,4 +11,4 @@
 - **Clearance & Minimum Sizes:** 
 
 ## 3. Visual Identity Specifications
-- Refer to `TailorAI/Architecture/Visual_Identity.md` for full color tokens, typography scales, and CSS variable mapping.
+- Refer to `.tailorai/Architecture/Visual_Identity.md` for full color tokens, typography scales, and CSS variable mapping.

@@ -9,4 +9,4 @@ Perform thorough, objective code reviews to catch bugs, security issues, archite
 3. **Security Check:** Is input validated, output sanitized, and authorization enforced?
 4. **Performance Check:** Are there any query bottlenecks, unindexed fields, or memory leaks?
 5. **Test Coverage:** Are unit or integration tests included for the new logic?
-6. **Task Alignment:** Do the changes match the objective described in the task file in `TailorAI/Tasks/`?
+6. **Task Alignment:** Do the changes match the objective described in the task file in `.tailorai/Tasks/`?

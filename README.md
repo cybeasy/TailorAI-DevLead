@@ -1,11 +1,10 @@
 <div align="center">
 
-# Cybeasy TailorAI-DevLead
+# TailorAI DevLead Workspace
 
 ### Turn any AI coding agent into a disciplined Technical Lead for your repository.
 
-[![Website](https://img.shields.io/badge/TailorAI-tailorai.me-blue.svg)](https://tailorai.me/)
-[![Company](https://img.shields.io/badge/Company-Cybeasy.com-0891b2.svg)](https://cybeasy.com/)
+[![Powered by TailorAi.me](https://img.shields.io/badge/powered%20by-TailorAi.me-0891b2.svg)](https://tailorai.me)
 [![Status](https://img.shields.io/badge/status-ready-success.svg)](#)
 [![Language](https://img.shields.io/badge/language-Markdown-0891b2.svg)](#)
 [![Stack](https://img.shields.io/badge/stack-agnostic-6d28d9.svg)](#)
@@ -17,7 +16,7 @@
 
 ## 📖 Overview
 
-The **AI Agent Workspace Template** is a stack-agnostic, language-agnostic governance layer you drop into **any** software repository. It instantiates an `Ai/` directory that transforms an AI coding agent (Claude, GPT, Cursor, etc.) into an effective **Technical Lead** that understands, refactors, and extends your codebase cleanly — instead of editing blindly.
+**TailorAI DevLead Workspace** is a stack-agnostic, language-agnostic governance layer powered by [TailorAi.me](https://tailorai.me). You drop it into **any** software repository to instantiate an `Ai/` directory that transforms an AI coding agent (Claude, GPT, Cursor, etc.) into an effective **Technical Lead** that understands, refactors, and extends your codebase cleanly — instead of editing blindly.
 
 The template solves the three biggest problems of AI-assisted development:
 

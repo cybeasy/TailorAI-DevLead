@@ -16,7 +16,7 @@
 
 ## 📖 Overview
 
-**TailorAI DevLead Workspace** is a stack-agnostic, language-agnostic governance layer powered by [TailorAi.me](https://tailorai.me). You drop it into **any** software repository to instantiate an `TailorAI/` directory that transforms an AI coding agent (Claude, GPT, Cursor, etc.) into an effective **Technical Lead** that understands, refactors, and extends your codebase cleanly — instead of editing blindly.
+**TailorAI DevLead Workspace** is a stack-agnostic, language-agnostic governance layer powered by [TailorAi.me](https://tailorai.me). You drop it into **any** software repository to instantiate a `.tailorai/` directory that transforms an AI coding agent (Claude, GPT, Cursor, etc.) into an effective **Technical Lead** that understands, refactors, and extends your codebase cleanly — instead of editing blindly.
 
 The template solves the three biggest problems of AI-assisted development:
 
@@ -52,7 +52,7 @@ TailorAI-DevLead/
 ├── AGENT_STRATEGY.md                # Operational behavior reference (How + When)
 ├── init-agent.md                    # Master setup protocol (Steps 0-5)
 │
-└── TailorAI/                              # Governance Workspace (copied into your project)
+└── .tailorai/                              # Governance Workspace (copied into your project)
     ├── Agent.md                     # AI runtime constitution (critical rules)
     ├── ACTIVE_TASKS.md              # In-progress tasks register
     ├── PROJECT_MAP.md               # Knowledge base master index
@@ -99,7 +99,7 @@ TailorAI-DevLead/
         └── migration/
 ```
 
-> ℹ️ The three root-level files (`AGENT_BLUEPRINT.md`, `AGENT_STRATEGY.md`, `init-agent.md`) govern the **template itself**. The `TailorAI/` directory is what actually gets copied into your target projects.
+> ℹ️ The three root-level files (`AGENT_BLUEPRINT.md`, `AGENT_STRATEGY.md`, `init-agent.md`) govern the **template itself**. The `.tailorai/` directory is what actually gets copied into your target projects.
 
 ### 📚 What to Read First
 
@@ -108,7 +108,7 @@ TailorAI-DevLead/
 | **`AGENT_BLUEPRINT.md`** | *What* the system is + *why* it was designed this way. Architecture, decisions, placeholder contract. | Maintainers |
 | **`AGENT_STRATEGY.md`** | *How* the agent behaves + *when* it takes each action. Decision trees, the 8-stage cycle, future-dev guide. | Maintainers |
 | **`init-agent.md`** | The 6-step setup protocol (Steps 0–5). Executed by any AI agent. | Anyone setting up a project |
-| **`TailorAI/Agent.md`** | The runtime constitution the agent reads at runtime. | The AI agent itself |
+| **`.tailorai/Agent.md`** | The runtime constitution the agent reads at runtime. | The AI agent itself |
 
 ---
 
@@ -134,7 +134,7 @@ Open an AI agent session in your target project root and state:
 
 > **"Read `TailorAI-DevLead/init-agent.md` and execute Step 0."**
 
-The agent will automatically scan your project, instantiate the `TailorAI/` governance workspace in your project root, populate placeholders, and generate a **Project Scan Report**. Review it, then proceed step-by-step:
+The agent will automatically scan your project, instantiate the `.tailorai/` governance workspace in your project root, populate placeholders, and generate a **Project Scan Report**. Review it, then proceed step-by-step:
 
 ```
 "Execute Step 1"   # Base workspace initialization + placeholder population
@@ -159,11 +159,11 @@ The agent will automatically scan your project, instantiate the `TailorAI/` gove
 
 | Step | Name | Mode | Deliverable |
 |:----:|------|:----:|-------------|
-| **0** | Pre-flight Project Scan | Automated | `TailorAI/Architecture/Project_Scan_Report.md` |
-| **1** | Base Workspace Initialization | Automated | Populated core `TailorAI/` files + placeholder replacement |
+| **0** | Pre-flight Project Scan | Automated | `.tailorai/Architecture/Project_Scan_Report.md` |
+| **1** | Base Workspace Initialization | Automated | Populated core `.tailorai/` files + placeholder replacement |
 | **2** | Architecture Documentation | Manual / Guided | `Technical_Architecture.md`, `PRD.md`, `Visual_Identity.md` |
-| **3** | Legacy Rules Migration | Interactive | `TailorAI/Tasks/migration/step3_rules_migration_report.md` |
-| **4** | Knowledge Base & Task Migration | Batch Processing | `TailorAI/Archive_Legacy/`, `migration_queue.md`, migrated tasks |
+| **3** | Legacy Rules Migration | Interactive | `.tailorai/Tasks/migration/step3_rules_migration_report.md` |
+| **4** | Knowledge Base & Task Migration | Batch Processing | `.tailorai/Archive_Legacy/`, `migration_queue.md`, migrated tasks |
 | **5** | Stack-Specific Audits & Skills | Automated | Stack-specific skill + audit files |
 
 **Stack-specific additions generated in Step 5:**
@@ -190,8 +190,8 @@ Once set up, daily work is driven by the **Context Router** and **Atomic Executi
 ```
 
 The agent will:
-1. Check `TailorAI/ACTIVE_TASKS.md` for in-progress work.
-2. Create a task file `TailorAI/Tasks/feature/YYYY-MM-DD_password_reset.md` using `Task_Template.md`.
+1. Check `.tailorai/ACTIVE_TASKS.md` for in-progress work.
+2. Create a task file `.tailorai/Tasks/feature/YYYY-MM-DD_password_reset.md` using `Task_Template.md`.
 3. Register it in `ACTIVE_TASKS.md`.
 4. **Present the plan and wait** for your approval before writing any code.
 5. Execute one sub-task at a time, marking `[ ]` → `[x]` and documenting changes in `## 3. Implementation Reality`.
@@ -211,17 +211,17 @@ The agent consults `PROJECT_MAP.md`, finds the relevant task file, and loads onl
 "Run the security audit."
 ```
 
-The agent reads `TailorAI/Audits/Security_Audit_Prompt.md`, scans the codebase within the security domain, and produces a structured findings report (it never mutates code).
+The agent reads `.tailorai/Audits/Security_Audit_Prompt.md`, scans the codebase within the security domain, and produces a structured findings report (it never mutates code).
 
 ### Slash commands
 
 | Command | Skill invoked |
 |---------|---------------|
-| `/clean-code` | `TailorAI/Skills/CleanCode_Skill.md` |
-| `/security` | `TailorAI/Skills/Security_Skill.md` |
-| `/performance` | `TailorAI/Skills/Performance_Skill.md` |
-| `/code-review` | `TailorAI/Skills/Code_Review_Skill.md` |
-| `/design` | `TailorAI/Skills/Designer_Skill.md` |
+| `/clean-code` | `.tailorai/Skills/CleanCode_Skill.md` |
+| `/security` | `.tailorai/Skills/Security_Skill.md` |
+| `/performance` | `.tailorai/Skills/Performance_Skill.md` |
+| `/code-review` | `.tailorai/Skills/Code_Review_Skill.md` |
+| `/design` | `.tailorai/Skills/Designer_Skill.md` |
 
 ---
 
@@ -237,13 +237,13 @@ REQUEST RECEIVED
    trivial fix? ──YES──→ execute directly, load NO extra files. END.
       │ NO
       ▼
-   read TailorAI/ACTIVE_TASKS.md ── related task? ──YES──→ continue its [ ] steps.
+   read .tailorai/ACTIVE_TASKS.md ── related task? ──YES──→ continue its [ ] steps.
       │ NO
       ▼
    new work (not searching)? ──YES──→ ask user to clarify. DO NOT preload PROJECT_MAP.
       │ NO (searching)
       ▼
-   read TailorAI/PROJECT_MAP.md → locate the relevant task/architecture file.
+   read .tailorai/PROJECT_MAP.md → locate the relevant task/architecture file.
       │
       ▼
    load ONLY that 1 file. Hard cap: 2-3 files per request.
@@ -288,15 +288,15 @@ Templates use `{{TOKEN}}` placeholders auto-populated at Step 1. The complete co
 
 ## 🔌 Running Your Actual Project (dev/test/build)
 
-This template governs **how** the agent works — it does not contain your application code. After setup, your project's own commands apply and are recorded in `TailorAI/Protocols/`:
+This template governs **how** the agent works — it does not contain your application code. After setup, your project's own commands apply and are recorded in `.tailorai/Protocols/`:
 
 | Command type | Where it's recorded | Typical examples (stack-dependent) |
 |--------------|----------------------|------------------------------------|
-| **Run dev server** | `TailorAI/Protocols/Deployment_Protocol.md` → `{{LOCAL_DEV_COMMAND}}` | `npm run dev`, `php artisan serve`, `python manage.py runserver`, `go run ./cmd` |
-| **Run tests** | `TailorAI/Protocols/Testing_Standards.md` → `{{TEST_COMMAND}}` | `npm test`, `php artisan test`, `pytest`, `go test ./...` |
-| **Type check / lint** | `TailorAI/Protocols/Testing_Standards.md` → `{{TYPE_CHECK_COMMAND}}` | `tsc --noEmit`, `phpstan analyse`, `mypy .` |
+| **Run dev server** | `.tailorai/Protocols/Deployment_Protocol.md` → `{{LOCAL_DEV_COMMAND}}` | `npm run dev`, `php artisan serve`, `python manage.py runserver`, `go run ./cmd` |
+| **Run tests** | `.tailorai/Protocols/Testing_Standards.md` → `{{TEST_COMMAND}}` | `npm test`, `php artisan test`, `pytest`, `go test ./...` |
+| **Type check / lint** | `.tailorai/Protocols/Testing_Standards.md` → `{{TYPE_CHECK_COMMAND}}` | `tsc --noEmit`, `phpstan analyse`, `mypy .` |
 
-Because the template is stack-agnostic, the actual commands are **detected from your manifests** during Step 0 and **populated** during Step 1. Refer to your scanned `TailorAI/Architecture/Project_Scan_Report.md` for the exact commands applied to your project.
+Because the template is stack-agnostic, the actual commands are **detected from your manifests** during Step 0 and **populated** during Step 1. Refer to your scanned `.tailorai/Architecture/Project_Scan_Report.md` for the exact commands applied to your project.
 
 ---
 
@@ -311,11 +311,11 @@ This template is designed to be **maintained and extended safely**. Two files ar
 
 | You want to... | Modify |
 |----------------|--------|
-| Change a behavioral rule | `TailorAI/Agent.md` + document rationale in `AGENT_STRATEGY.md` §5 |
-| Add a universal engineering skill | `TailorAI/Skills/` + register in `TailorAI/Agent.md` §3C + `AGENT_STRATEGY.md` §7 |
-| Add a stack-specific skill | `TailorAI/Skills/` + Step 5 table in `init-agent.md` |
-| Add an audit type | `TailorAI/Audits/` + register in `TailorAI/README.md` |
-| Change directory structure | `AGENT_BLUEPRINT.md` §4 + `TailorAI/README.md` tree |
+| Change a behavioral rule | `.tailorai/Agent.md` + document rationale in `AGENT_STRATEGY.md` §5 |
+| Add a universal engineering skill | `.tailorai/Skills/` + register in `.tailorai/Agent.md` §3C + `AGENT_STRATEGY.md` §7 |
+| Add a stack-specific skill | `.tailorai/Skills/` + Step 5 table in `init-agent.md` |
+| Add an audit type | `.tailorai/Audits/` + register in `.tailorai/README.md` |
+| Change directory structure | `AGENT_BLUEPRINT.md` §4 + `.tailorai/README.md` tree |
 | Add a new placeholder token | Template file + `AGENT_BLUEPRINT.md` §7 + `init-agent.md` Step 1 list |
 
 ### Backward-compatibility invariants
@@ -337,7 +337,7 @@ Contributions are welcome! Because this project governs agent behavior, changes 
    ```bash
    git checkout -b feat/your-improvement
    ```
-   Follow the branch naming in `TailorAI/Protocols/Git_Workflow.md` (`feat/`, `fix/`, `refactor/`, `chore/`).
+   Follow the branch naming in `.tailorai/Protocols/Git_Workflow.md` (`feat/`, `fix/`, `refactor/`, `chore/`).
 2. **Before changing structure or behavior**, consult `AGENT_BLUEPRINT.md` and `AGENT_STRATEGY.md` §9.
 3. **Document your rationale** — add a row to the Design Decisions Log (`AGENT_BLUEPRINT.md` §6) and/or the Strategy Change Log (`AGENT_STRATEGY.md` §10).
 4. **Commit atomically**, referencing the relevant governance file:
@@ -350,7 +350,7 @@ Contributions are welcome! Because this project governs agent behavior, changes 
    ```
 5. **Open a Pull Request** linking the motivation. Ensure no backward-compatibility invariant is broken.
 
-> 💡 You can dogfood this template: use the `TailorAI/` workspace on this very repository to manage contributions to the template itself.
+> 💡 You can dogfood this template: use the `.tailorai/` workspace on this very repository to manage contributions to the template itself.
 
 ---
 

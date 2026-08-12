@@ -4,7 +4,7 @@
 blank_issues_enabled: true
 contact_links:
   - name: 📚 Read the documentation first
-    url: https://github.com/khaled/Ai_Template/blob/main/AGENT_BLUEPRINT.md
+    url: https://github.com/cybeasy/TailorAI-DevLead/blob/main/AGENT_BLUEPRINT.md
     about: |
       Before opening an issue, please consult the knowledge base:
       • AGENT_BLUEPRINT.md — What the system is + Why (structure, decisions, placeholder contract)
@@ -12,7 +12,7 @@ contact_links:
       • init-agent.md — The 6-step setup protocol
       Many "bugs" are actually intended behavior documented there.
   - name: 💬 Ask a question / open a discussion
-    url: https://github.com/khaled/Ai_Template/discussions
+    url: https://github.com/cybeasy/TailorAI-DevLead/discussions
     about: |
       For usage questions ("how do I...?", "should I...?") rather than bug reports or feature requests,
       please use GitHub Discussions instead of opening an issue.

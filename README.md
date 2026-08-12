@@ -119,21 +119,25 @@ TailorAI-DevLead/
 - An AI coding agent (e.g., Claude, GPT-4, Cursor, Copilot Chat) capable of reading and writing files.
 - (Optional) Git installed — the workflow is designed around atomic commits.
 
-### Step 1 — Copy the workspace into your project
+### Step 1 — Clone & Copy the workspace into your project
 
-Copy the `Ai/` directory (and `init-agent.md`) into the **root** of your target repository:
+1. **Clone this repository:**
 
 ```bash
-# From your project root
-cp -r /path/to/TailorAI-DevLead/Ai .
-cp /path/to/TailorAI-DevLead/init-agent.md .
+git clone https://github.com/cybeasy/TailorAI-DevLead.git
 ```
 
-Or, if you cloned this template repo:
+2. **Copy the `Ai/` directory and `init-agent.md` into your target project root:**
 
 ```bash
-cp -r TailorAI-DevLead/Ai ./Ai
-cp TailorAI-DevLead/init-agent.md ./init-agent.md
+# From your project root (if TailorAI-DevLead was cloned alongside your project):
+cp -r ../TailorAI-DevLead/Ai ./
+cp ../TailorAI-DevLead/init-agent.md ./
+
+# Or if cloned directly inside your project folder:
+cp -r TailorAI-DevLead/Ai ./
+cp TailorAI-DevLead/init-agent.md ./
+rm -rf TailorAI-DevLead  # optional cleanup
 ```
 
 ### Step 2 — Run the setup protocol

@@ -1,6 +1,6 @@
 # AI Agent Workspace Template — Architecture Blueprint & Knowledge Base
 
-> **Master Knowledge Base:** Primary architecture documentation for the `Ai_Template` project.
+> **Master Knowledge Base:** Primary architecture documentation for the `TailorAI-DevLead` project.
 > This is the **What + Why** reference — it documents the system structure, the design decisions behind it, and the full placeholder contract.
 > For **How** the agent behaves at runtime, see `AGENT_STRATEGY.md`.
 > Read this file in any new session to understand the system design, file hierarchy, and decision log without re-explaining context.
@@ -54,7 +54,7 @@ This template ships with **two master reference files** at the root, plus the ru
 ## 4. Complete Directory Hierarchy
 
 ```text
-Ai_Template/
+TailorAI-DevLead/
 ├── AGENT_BLUEPRINT.md              # ← THIS FILE (architecture & knowledge base)
 ├── AGENT_STRATEGY.md                # Operational behavior & decision reference
 ├── init-agent.md                    # Master setup protocol (Steps 0-5)

@@ -45,7 +45,7 @@ This workspace fixes all three with a **Context Router**, **Atomic Execution**, 
 ## 🗂️ Repository Structure
 
 ```text
-Ai_Template/
+TailorAI-DevLead/
 ├── README.md                        # ← You are here
 ├── AGENT_BLUEPRINT.md               # Architecture knowledge base (What + Why)
 ├── AGENT_STRATEGY.md                # Operational behavior reference (How + When)
@@ -125,15 +125,15 @@ Copy the `Ai/` directory (and `init-agent.md`) into the **root** of your target 
 
 ```bash
 # From your project root
-cp -r /path/to/Ai_Template/Ai .
-cp /path/to/Ai_Template/init-agent.md .
+cp -r /path/to/TailorAI-DevLead/Ai .
+cp /path/to/TailorAI-DevLead/init-agent.md .
 ```
 
 Or, if you cloned this template repo:
 
 ```bash
-cp -r Ai_Template/Ai ./Ai
-cp Ai_Template/init-agent.md ./init-agent.md
+cp -r TailorAI-DevLead/Ai ./Ai
+cp TailorAI-DevLead/init-agent.md ./init-agent.md
 ```
 
 ### Step 2 — Run the setup protocol

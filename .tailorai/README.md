@@ -1,100 +1,101 @@
-# Governance & Technical Documentation (`.tailorai/`)
-**Project:** {{PROJECT_NAME}}
+# Governance & Technical Documentation (`.tailorai/`) 🏛️
+**Project:** `{{PROJECT_NAME}}`
 
-Welcome to the central AI governance, architectural specifications, and task tracking hub. All AI agents and human developers working on the repository must follow the guidelines documented here.
+Welcome to the central AI engineering governance, architectural specifications, and task tracking hub. All AI agents and human developers working on the repository follow the guidelines documented here.
 
 > **Companion references (in project root, outside `.tailorai/`):**
 > - **`AGENT_BLUEPRINT.md`** — Architecture knowledge base: *what* the workspace is + *why* it was designed this way. The master reference for structure, decisions, and the placeholder contract.
 > - **`AGENT_STRATEGY.md`** — Operational strategy: *how* the agent behaves + *when* it takes each action. Read this before changing any behavioral rule.
-> - **`init-agent.md`** — Setup protocol (Steps 0-5) used to instantiate this workspace in a new repository.
->
-> Read these first when extending or maintaining the agent itself.
+> - **`init-agent.md`** — Setup protocol (Steps 0-5) used to instantiate or upgrade this workspace.
 
 ---
 
-## 📚 Core Documentation Index
-
-### 1. Primary Operating Standards
-* 🧭 **[PROJECT_MAP.md](PROJECT_MAP.md)**: Master index listing all foundation docs and completed task files.
-* 🤖 **[Agent.md](Agent.md)**: Mandatory protocol for AI agents (task creation rules, code standards, execution protocol).
-* 📋 **[ACTIVE_TASKS.md](ACTIVE_TASKS.md)**: Currently in-progress tasks.
-
-### 2. Architecture & Design (`.tailorai/Architecture/`)
-* 🏗️ **[Technical_Architecture.md](Architecture/Technical_Architecture.md)**: System architecture, tech stack, and folder structure.
-* 📄 **[PRD.md](Architecture/PRD.md)**: Product Requirements Document — roles, modules, and scope.
-* 🎨 **[Visual_Identity.md](Architecture/Visual_Identity.md)**: Visual identity guide, color palette, typography, and design tokens.
-
-### 3. Operational Protocols (`.tailorai/Protocols/`)
-* 🔌 **[API_Contracts.md](Protocols/API_Contracts.md)**: Standard API response envelopes and error shapes.
-* 🔐 **[Security_Protocol.md](Protocols/Security_Protocol.md)**: Authentication, authorization, and data protection.
-* 🧪 **[Testing_Standards.md](Protocols/Testing_Standards.md)**: Testing guidelines and quality assurance standards.
-* 🚀 **[Deployment_Protocol.md](Protocols/Deployment_Protocol.md)**: Deployment procedures and environment setup.
-* 🌿 **[Git_Workflow.md](Protocols/Git_Workflow.md)**: Branch naming, commit message standards, and PR guidelines.
-
-### 4. AI Skills (`.tailorai/Skills/`)
-* 🧹 **[CleanCode_Skill.md](Skills/CleanCode_Skill.md)**: Code quality, SRP, decomposition, and naming rules.
-* 🔒 **[Security_Skill.md](Skills/Security_Skill.md)**: Security best practices and vulnerability prevention.
-* ⚡ **[Performance_Skill.md](Skills/Performance_Skill.md)**: Performance optimization patterns.
-* 🔍 **[Code_Review_Skill.md](Skills/Code_Review_Skill.md)**: Systematic code review methodology.
-* 🎨 **[Designer_Skill.md](Skills/Designer_Skill.md)**: UI/UX design principles and accessibility.
-
-### 5. Audit Prompts (`.tailorai/Audits/`)
-* 🧹 **[CleanCode_Audit_Prompt.md](Audits/CleanCode_Audit_Prompt.md)**: Scan codebase for code quality violations.
-* 🔒 **[Security_Audit_Prompt.md](Audits/Security_Audit_Prompt.md)**: Scan for security vulnerabilities.
-* 📂 **[TailorAI_Folder_Audit_Prompt.md](Audits/TailorAI_Folder_Audit_Prompt.md)**: Audit `.tailorai/` folder consistency and completeness.
-* 🔄 **[Knowledge_Base_Verification.md](Audits/Knowledge_Base_Verification.md)**: Verify PROJECT_MAP matches actual Tasks.
-
----
-
-## 📁 Directory Structure
+## 🧭 Navigation & Directory Map
 
 ```
 .tailorai/
-├── Agent.md                            # Master AI Instruction Protocol
-├── PROJECT_MAP.md                      # Knowledge Base Master Index
-├── ACTIVE_TASKS.md                     # Currently In-Progress Tasks
-├── README.md                           # Documentation Index & Directory Guide
-├── Architecture/                       # Architecture & Design System
+├── Agent.md                            # Universal AI entry router & critical invariants
+├── HANDBOOK.md                         # Engineering constitution & Dual-Track rules
+├── PROJECT_MAP.md                      # Knowledge base master index & Fast-Track log
+├── ACTIVE_TASKS.md                     # Currently in-progress tasks registry
+├── README.md                           # Documentation index & directory guide
+│
+├── Engineering/                        # Core Engineering Roles & Operational Runbooks
+│   ├── Lead_Developer.md               # Agent 1: Full-stack execution lead
+│   ├── Code_Review.md                  # Agent 2: Code review & compliance auditor
+│   └── Runbooks/                       # Operational execution runbooks
+│       ├── Local_Setup.md              # Local dev environment setup
+│       ├── Commands.md                 # CLI commands reference
+│       ├── Production.md               # Production deployment specifications
+│       └── CI_CD_Pipeline.md           # Continuous integration & deployment
+│
+├── QA/                                 # Decoupled Quality & Testing Project
+│   ├── Agent_Testing.md                # Agent 3: QA Automation Lead
+│   ├── DEFECTS_LOG.md                  # Master defect triage & findings register
+│   └── TEST_PLAN.md                    # Decoupled test matrix & scenario registry
+│
+├── Protocols/                          # Universal Engineering Protocols
+│   ├── API_Contracts.md
+│   ├── Audit_Log_Protocol.md
+│   ├── Deployment_Protocol.md
+│   ├── Environment_Variables_Protocol.md
+│   ├── Git_Workflow.md
+│   ├── I18n_Protocol.md
+│   ├── Security_Protocol.md
+│   ├── Storage_Protocol.md
+│   ├── Testing_Standards.md
+│   ├── Theme_Protocol.md
+│   └── WebSocket_Protocol.md
+│
+├── Architecture/                       # Architecture & Design Specifications
 │   ├── Technical_Architecture.md
 │   ├── PRD.md
 │   ├── Visual_Identity.md
-│   └── Architecture_Questions.md       # Helper questions for setup
-├── Protocols/                          # Operational Standards & Protocols
-│   ├── API_Contracts.md
-│   ├── Security_Protocol.md
-│   ├── Testing_Standards.md
-│   ├── Deployment_Protocol.md
-│   └── Git_Workflow.md
-├── Skills/                             # AI Agent Skills & Rules
+│   └── Architecture_Questions.md
+│
+├── Skills/                             # Developer Skills & Quality Rules
 │   ├── CleanCode_Skill.md
-│   ├── Security_Skill.md
-│   ├── Performance_Skill.md
 │   ├── Code_Review_Skill.md
 │   ├── Designer_Skill.md
-│   └── Knowledge_Builder_Skill.md     # Step 4 legacy task conversion protocol
-├── Audits/                             # Automated Audit Prompts
+│   ├── Knowledge_Builder_Skill.md
+│   ├── Performance_Skill.md
+│   └── Security_Skill.md
+│
+├── Audits/                             # Automated Verification Prompts
 │   ├── CleanCode_Audit_Prompt.md
+│   ├── Knowledge_Base_Verification.md
 │   ├── Security_Audit_Prompt.md
-│   ├── TailorAI_Folder_Audit_Prompt.md
-│   └── Knowledge_Base_Verification.md
-├── Brand/                              # Brand Identity Assets
+│   └── TailorAI_Folder_Audit_Prompt.md
+│
+├── Brand/                              # Brand Assets Template
 │   └── Brand_Guide_Template.md
-└── Tasks/                              # Category-based Task Tracking
+│
+└── Tasks/                              # Task Workspaces
     ├── Task_Template.md
-    ├── feature/
-    ├── bugfix/
-    ├── refactor/
     ├── backend/
     ├── frontend/
+    ├── bugfix/
+    ├── feature/
+    ├── refactor/
     ├── security/
-    └── migration/                     # Legacy migration tasks & queue
+    └── migration/
 ```
 
 ---
 
-## 🛠️ How to Work with Tasks
+## ⚡ Fast-Track vs. Full Protocol
 
-1. **Before starting a task:** Check `ACTIVE_TASKS.md` for ongoing work, then consult `PROJECT_MAP.md` to locate related completed tasks.
-2. **Creating a new task:** Use `Task_Template.md` to format your task file inside `.tailorai/Tasks/[category]/YYYY-MM-DD_[task_slug].md`.
-3. **Executing a task:** Work atomically (one sub-task at a time). Mark steps `[x]` upon completion and document all changes in `## 3. Implementation Reality`.
-4. **Completing a task:** After user confirmation, remove from `ACTIVE_TASKS.md` and add to `PROJECT_MAP.md` with `[x]`.
+| Track | When to Use | Documentation Overhead | Average Time |
+|---|---|---|---|
+| **🚀 Fast-Track** | Bug fixes, utility hooks, UI polish, locale keys (≤ 3 files) | No task file required. Fast syntax check + single line in `PROJECT_MAP.md`. | **< 1 min** |
+| **🛡️ Full Protocol** | New modules, schema migrations, public API endpoints, major flows | Task file in `Tasks/` + atomic execution + test registration in `TEST_PLAN.md`. | **Structured** |
+
+---
+
+## 🛠️ Offline Documentation Explorer
+
+To compile this documentation into a standalone single-file HTML viewer:
+```bash
+node scripts/build-explorer.js
+```
+The compiled explorer will be generated at `.tailorai/index.html`.

@@ -1,20 +1,23 @@
-# init-agent.md — AI Agent Workspace Setup Protocol
+# init-agent.md — AI Agent Workspace Setup Protocol 🚀
 
-> **Master Setup Protocol:** Use this document to initialize the `.tailorai/` governance workspace in any new or existing software repository.
-> Contains 6 numbered steps (0 to 5). Execute step-by-step: prompt the AI Agent with **"Read `init-agent.md` and execute Step X"**.
+> **Master Setup Protocol:** Use this document to initialize or upgrade the `.tailorai/` governance workspace in any new or existing software repository.  
+> Contains 7 numbered steps (0 to 5, including Step 3B). Execute step-by-step: prompt the AI Agent with **"Read `init-agent.md` and execute Step X"**.
 
 ---
 
 ## How to Use
 
-1. Clone this repository alongside or inside your target project root.
-2. Open an AI Agent session in your target project root and state: **"Read `TailorAI-DevLead/init-agent.md` and execute Step 0"**.
+1. Clone or copy `TailorAI-DevLead` alongside or into your target project.
+2. Open an AI Agent session in your target project root and state: **"Read `init-agent.md` and execute Step 0"**.
 3. After reviewing each step's output, proceed by stating: **"Execute Step X"**.
 
 ### New Project (No Legacy Agent):
 Run: **Step 0 → Step 1 → Step 2 (Manual Setup) → Step 5**
 
-### Existing Project (With Legacy Agent / Historic Tasks):
+### Existing Project with Older TailorAI v1:
+Run: **Step 0 → Step 3B (Upgrade to Enterprise OS v2) → Step 5**
+
+### Existing Project (With Generic Legacy Agent / Historic Tasks):
 Run: **Step 0 → Step 1 → Step 2 (Manual Setup) → Step 3 → Step 4 → Step 5**
 
 ---
@@ -34,36 +37,27 @@ Inspect the project repository and generate an initial technical profile report.
    - `pubspec.yaml` → Flutter / Dart
    - `Gemfile` → Ruby / Rails
    - `*.csproj` / `*.sln` → .NET / C#
-   - Any project manifest file
 
 2. **Inspect Directory Layout:** Scan top 2 levels of project hierarchy.
 
 3. **Check for Legacy Agent Files:** Search for pre-existing agent files or folders:
-   - `.tailorai/`, `TailorAI/`, `ai/`, `.ai/`, `Ai_old/`, `ai_old/`, `docs/agent/`, `AGENT.md`, `agent.md`, `.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `AGENTS.md`, `.agents/`, `.gemini/`, `.claude/`, etc.
+   - Existing `.tailorai/` (Check if v1 with single `Agent.md` and no `HANDBOOK.md`), `TailorAI/`, `ai/`, `.ai/`, `Ai_old/`, `docs/agent/`, `AGENT.md`, `.cursorrules`, `CLAUDE.md`, `.windsurfrules`.
 
 4. **Generate Report** in `.tailorai/Architecture/Project_Scan_Report.md`:
-
-```markdown
-# Project Scan Report
-- **Scan Date:** [YYYY-MM-DD]
-- **Project Name:** [Detected from config]
-- **Tech Stack:**
-  - Backend: [e.g. Laravel 11 / Django 5 / Express.js / Go]
-  - Frontend: [e.g. Next.js 14 / Vue 3 / Flutter / None]
-  - Database: [e.g. PostgreSQL / MySQL / MongoDB / Unspecified]
-  - Storage: [e.g. S3 / R2 / Local / Unspecified]
-- **Locales & Languages:** [e.g. English / Multilingual]
-- **Directory Layout:**
-  ```
-  [High-level folder tree]
-  ```
-- **Legacy Agent Detected:** [Yes — Path: ... / No]
-```
+   ```markdown
+   # Project Scan Report
+   - **Scan Date:** [YYYY-MM-DD]
+   - **Project Name:** [Detected from config]
+   - **Tech Stack:**
+     - Backend: [e.g. Laravel 11 / Django 5 / Express / Go]
+     - Frontend: [e.g. Next.js 14 / Vue 3 / Flutter / None]
+     - Database: [e.g. PostgreSQL / MySQL / SQLite]
+     - Storage: [e.g. S3 / MinIO / Local]
+   - **Locales & Languages:** [e.g. English / Arabic RTL]
+   - **TailorAI Version Detected:** [None / Legacy v1 / Enterprise OS v2]
+   ```
 
 5. **Present Report** to user and confirm correctness before proceeding.
-
-### Deliverable:
-- `.tailorai/Architecture/Project_Scan_Report.md`
 
 ---
 
@@ -74,36 +68,29 @@ Initialize core `.tailorai/` workspace files using detected project specificatio
 
 ### Execution Instructions:
 1. **Instantiate Workspace Directory:** If `./.tailorai/` does not exist in your target project root, copy the `.tailorai/` directory from `TailorAI-DevLead/.tailorai/` into `./.tailorai/`.
-2. **Read** `.tailorai/Architecture/Project_Scan_Report.md` (from Step 0).
+2. **Copy Utility Scripts:** Copy `scripts/build-explorer.js` to target project's `scripts/` folder.
 3. **Inspect Project Manifests** to detect actual commands (e.g. `scripts` in `package.json` for test/dev commands, or `pytest`, `php artisan test`, `go test`, etc.).
-4. **Populate Dynamic Placeholders** across template files. The **complete token list** is documented in `AGENT_BLUEPRINT.md` §7 (Placeholder Contract). Replace every `{{TOKEN}}` you find during the scan. If a value cannot be auto-detected, **leave the token in place and flag it for manual completion** — never invent a value. Summary of tokens by group:
+4. **Populate Dynamic Placeholders:** Replace core tokens:
+   - `{{PROJECT_NAME}}`, `{{TECH_STACK}}`, `{{DATABASE}}`
+   - `{{TEST_COMMAND}}`, `{{E2E_TEST_COMMAND}}`, `{{LOCAL_DEV_COMMAND}}`, `{{TYPE_CHECK_COMMAND}}`, `{{LINT_COMMAND}}`
+5. **Create / Update Workspace Files:**
 
-   **Identity & Stack:** `{{PROJECT_NAME}}`, `{{TECH_STACK}}`, `{{BACKEND_FRAMEWORK}}`, `{{FRONTEND_FRAMEWORK}}`, `{{DATABASE}}`
-   **Commands:** `{{TEST_COMMAND}}`, `{{LOCAL_DEV_COMMAND}}`, `{{TYPE_CHECK_COMMAND}}`, `{{LINT_TYPECHECK_COMMAND}}`
-   **API Contracts:** `{{API_RESPONSE_ENVELOPE_EXAMPLE}}`, `{{API_ERROR_ENVELOPE_EXAMPLE}}`, `{{HTTP_STATUS_CODES_SPEC}}`, `{{PAGINATION_SCHEMA_EXAMPLE}}`
-   **Security:** `{{AUTH_MECHANISM_SPEC}}`, `{{AUTHORIZATION_SPEC}}`, `{{TENANT_ISOLATION_SPEC}}`, `{{VALIDATION_ENGINE_SPEC}}`, `{{FILE_UPLOAD_SECURITY_SPEC}}`, `{{ENCRYPTION_SPEC}}`, `{{RATE_LIMITING_SPEC}}`, `{{ANTI_BOT_SPEC}}`
-   **Testing Scopes:** `{{UNIT_TEST_SCOPE}}`, `{{INTEGRATION_TEST_SCOPE}}`, `{{E2E_TEST_SCOPE}}`
-   **Deployment:** `{{STAGING_DEPLOY_PROCESS}}`, `{{PRODUCTION_DEPLOY_PROCESS}}`
-   **Visual Identity / Design Tokens (if detected, else defer to Step 2):** `{{COLOR_PRIMARY}}`, `{{COLOR_SECONDARY}}`, `{{COLOR_ACCENT}}`, `{{COLOR_DANGER}}`, `{{COLOR_BG}}`, `{{COLOR_SURFACE}}`, `{{FONT_FAMILY}}`, `{{HEADING_SCALE}}`, `{{BODY_SCALE}}`, `{{LAYOUT_DIRECTION}}`, `{{GRID_BASELINE}}`, `{{BORDER_RADIUS_SCALE}}`
-5. **Create / Update** workspace files:
+| File / Folder | Action |
+|---|---|
+| `.tailorai/Agent.md` | Universal entry router and 10 Critical Engineering Invariants |
+| `.tailorai/HANDBOOK.md` | Engineering Constitution & Fast-Track Dual-Track rules |
+| `.tailorai/Engineering/` | Lead Developer, Code Reviewer, and Operational Runbooks |
+| `.tailorai/QA/` | Dedicated QA Automation Lead, `DEFECTS_LOG.md`, and `TEST_PLAN.md` |
+| `.tailorai/Protocols/*.md` | Universal engineering protocols (11 total) |
+| `.tailorai/ACTIVE_TASKS.md` | In-progress task queue |
+| `.tailorai/PROJECT_MAP.md` | Master index with `## Fast-Track History` |
+| `.tailorai/README.md` | Directory map & Fast-Track overview |
+| `scripts/build-explorer.js` | Offline documentation viewer generator |
 
-| File | Action |
-|------|--------|
-| `.tailorai/Agent.md` | Replace variables and confirm core engineering principles |
-| `.tailorai/ACTIVE_TASKS.md` | Ready — Active tasks register |
-| `.tailorai/PROJECT_MAP.md` | Replace variables and link detected files |
-| `.tailorai/README.md` | Replace variables and format index |
-| `.tailorai/Protocols/*.md` | Replace placeholders with detected commands/specs |
-| `.tailorai/Architecture/Visual_Identity.md` | Populate tokens if detected, or defer to Step 2 |
-| `.tailorai/Skills/*.md` | Base universal skills ready |
-| `.tailorai/Audits/*.md` | Base universal audit prompts ready |
-| `.tailorai/Brand/Brand_Guide_Template.md` | Replace variables |
-| `.tailorai/Tasks/Task_Template.md` | Ready — Task file template |
-
-6. **Report Summary** of created files and populated parameters.
-
-### Deliverable:
-- Initialized `.tailorai/` governance workspace.
+6. **Generate Initial Explorer UI:**
+   ```bash
+   node scripts/build-explorer.js
+   ```
 
 ---
 
@@ -122,29 +109,30 @@ Fill in architectural specifications using the helper questionnaire.
 
 ---
 
-## Step 3: Legacy Rules Migration (Interactive)
+## Step 3: Legacy Rules Migration (For Non-TailorAI Agents)
 
 ### Prerequisites:
-- Legacy agent files detected during Step 0.
+- Generic legacy agent files detected during Step 0 (`.cursorrules`, `CLAUDE.md`, custom prompts).
 - Skip if no legacy agent exists.
 
+---
+
+## Step 3B: Upgrade Legacy TailorAI v1 to Enterprise OS v2
+
+### Prerequisites:
+- Existing `.tailorai/` directory detected from TailorAI v1 (lacking `HANDBOOK.md` or `QA/`).
+
 ### Execution Instructions:
-1. **Ask User:** Confirm the path of legacy agent instructions.
-2. **Read Legacy Rules File** (up to 2 files max).
-3. **Extract & Classify Rules:**
-   - Code quality rules
-   - Security rules
-   - Architectural rules
-   - Execution workflows
-4. **Compare against new `.tailorai/Agent.md`:**
-
-   | Condition | Action |
-   |-----------|--------|
-   | Legacy rule missing in new Agent.md | ✅ Append rule to appropriate section |
-   | Duplicate rule with identical meaning | ⏭️ Skip (already covered) |
-   | Conflicting rule | ⚠️ **Present conflict to user for resolution** |
-
-5. **Generate Migration Report** in `.tailorai/Tasks/migration/step3_rules_migration_report.md`.
+1. **Preserve Completed History:** Ensure existing `.tailorai/Tasks/` and `.tailorai/PROJECT_MAP.md` are backed up / preserved.
+2. **Introduce New Core Layers:**
+   - Add `.tailorai/HANDBOOK.md` (codifying Dual-Track Engine and 10 Critical Invariants).
+   - Add `.tailorai/Engineering/` (`Lead_Developer.md`, `Code_Review.md`, and `Runbooks/`).
+   - Add `.tailorai/QA/` (`Agent_Testing.md`, `DEFECTS_LOG.md`, `TEST_PLAN.md`).
+   - Add new universal protocols (`I18n_Protocol.md`, `Theme_Protocol.md`, `Storage_Protocol.md`, `Environment_Variables_Protocol.md`, `Audit_Log_Protocol.md`, `WebSocket_Protocol.md`).
+3. **Upgrade `.tailorai/Agent.md`:** Replace monolithic v1 `Agent.md` with the new lean Universal Router trampoline.
+4. **Upgrade `.tailorai/PROJECT_MAP.md`:** Add the `## Fast-Track History` section and link new protocols while retaining existing completed task archives.
+5. **Add Documentation Explorer Generator:** Copy `scripts/build-explorer.js` and execute it to generate `.tailorai/index.html`.
+6. **Report Upgrade Summary** to user.
 
 ---
 
@@ -154,18 +142,6 @@ Fill in architectural specifications using the helper questionnaire.
 - Historical task archives or legacy documentation present.
 - Skip if no legacy task history exists.
 
-### Execution Instructions:
-> Follow protocol documented in `.tailorai/Skills/Knowledge_Builder_Skill.md`.
-
-1. **Copy Legacy Directory** to `.tailorai/Archive_Legacy/`.
-2. **Create Queue** in `.tailorai/Tasks/migration/migration_queue.md`.
-3. **Batch Process (2-3 files per iteration):**
-   - Read uncompleted items `[ ]`.
-   - Convert tasks to standard format in `.tailorai/Tasks/[category]/`.
-   - Register completed tasks in `.tailorai/PROJECT_MAP.md`.
-   - Mark item `[x]` in `migration_queue.md`.
-4. **Resume Capability:** If interrupted, resume cleanly from the first remaining unchecked item.
-
 ---
 
 ## Step 5: Stack-Specific Audits & Skills Customization
@@ -174,26 +150,6 @@ Fill in architectural specifications using the helper questionnaire.
 Generate additional audit prompts and specialized skills matching the target project's tech stack.
 
 ### Execution Instructions:
-1. **Read** `.tailorai/Architecture/Project_Scan_Report.md` (Step 0) and `Technical_Architecture.md` (Step 2).
-2. **Determine Stack-Specific Additions:**
-
-   | Tech Stack | Suggested Skills | Suggested Audits |
-   |------------|------------------|------------------|
-   | Laravel | `Laravel_HMVC_Skill.md` | `HMVC_Architecture_Audit.md` |
-   | React / Next.js | `NextJS_Hooks_Skill.md` | `Hooks_Isolation_Audit.md` |
-   | Django | `Django_Patterns_Skill.md` | `Django_Views_Audit.md` |
-   | Flutter | `Flutter_Clean_Arch_Skill.md` | `Widget_Decomposition_Audit.md` |
-   | Go | `Go_Patterns_Skill.md` | `Go_Concurrency_Audit.md` |
-   | .NET | `DotNet_Patterns_Skill.md` | `DotNet_Architecture_Audit.md` |
-
-3. **Present Recommendations** to user for approval.
-4. **Create Approved Files Only**.
-5. **Update `.tailorai/PROJECT_MAP.md`**.
-
----
-
-## General Rules
-> [!IMPORTANT]
-> - Never execute more than one step at a time without user confirmation.
-> - Never make assumptions on unclear requirements — ask first.
-> - Report progress summary after completing each step.
+1. Review `.tailorai/Architecture/Project_Scan_Report.md`.
+2. Propose stack-specific skills (e.g. Next.js, Laravel, Go, Django) to user.
+3. Install approved skills and update `.tailorai/PROJECT_MAP.md`.

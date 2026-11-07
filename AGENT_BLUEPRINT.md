@@ -1,53 +1,46 @@
-# Cybeasy TailorAI-DevLead — Architecture Blueprint & Knowledge Base
+# Cybeasy TailorAI-DevLead — Architecture Blueprint & Knowledge Base 🏛️💻
 
-> **Master Knowledge Base:** Primary architecture documentation for the `TailorAI-DevLead` project.
-> This is the **What + Why** reference — it documents the system structure, the design decisions behind it, and the full placeholder contract.
-> For **How** the agent behaves at runtime, see `AGENT_STRATEGY.md`.
-> Read this file in any new session to understand the system design, file hierarchy, and decision log without re-explaining context.
-> Last Updated: 2026-08-12
+> **Master Knowledge Base:** Primary architecture documentation for the `TailorAI-DevLead` project.  
+> This is the **What + Why** reference — it documents the system structure, the design decisions behind it, and the full placeholder contract.  
+> For **How** the agent behaves at runtime, see `AGENT_STRATEGY.md`.  
+> Read this file in any new session to understand the system design, file hierarchy, and decision log without re-explaining context.  
+> Version: 2.0.0 (Enterprise OS) | Last Updated: 2026-11-07
 
 ---
 
 ## 1. System Vision
 
-The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnostic template that instantiates a `.tailorai/` governance directory inside any software repository. Developed by **Cybeasy** ([cybeasy.com](https://cybeasy.com/)) for **TailorAI** ([tailorai.me](https://tailorai.me/)), this workspace transforms the AI Agent into an effective **Technical Lead** that understands, refactors, and extends the codebase cleanly.
+The **Cybeasy TailorAI-DevLead** workspace is a stack-agnostic, language-agnostic template that instantiates an autonomous engineering governance directory (`.tailorai/`) inside any software repository. Developed by **Cybeasy** ([cybeasy.com](https://cybeasy.com/)) for **TailorAI** ([tailorai.me](https://tailorai.me/)), this workspace transforms the AI Agent into an effective **Technical Lead (Agent 1)**, an architectural **Code Reviewer (Agent 2)**, and an autonomous **QA Automation Lead (Agent 3)**.
 
 ### Core Principles
-1. **Context Isolation (Context Router):** The AI Agent loads only 2-3 task-relevant files per request to optimize token usage.
-2. **Atomic Execution:** Tasks are logged in dedicated task files, executed step-by-step with explicit user confirmation.
-3. **Persistent Knowledge Base:** `PROJECT_MAP.md` acts as the master index and cumulative memory of the repository.
+1. **Context Isolation (Context Router):** The AI Agent loads only 2–3 task-relevant files per request to optimize token usage.
+2. **Dual-Track Execution Engine:** Fast-Track allows surgical micro-fixes (≤ 3 files) with zero documentation overhead, while Full Protocol enforces structured atomic tracking for architectural changes.
+3. **Decoupled Quality & Testing Model:** Agent 1 authors test files with status `⬜` without blocking velocity. Agent 3 executes tests on explicit human command.
+4. **Persistent Knowledge Base:** `PROJECT_MAP.md` acts as the master index, Fast-Track log, and cumulative memory of the repository.
 
 ---
 
 ## 2. Documentation Topology
 
-This template ships with **two master reference files** at the root, plus the runtime constitution inside `.tailorai/`. Understanding their split is essential for future maintenance.
+This template ships with **three master reference files** at the root, plus companion specifications and the runtime governance directory inside `.tailorai/`.
 
 | File | Scope | Question it answers | Audience |
-|------|-------|----------------------|----------|
+|---|---|---|---|
 | `AGENT_BLUEPRINT.md` (this file) | Architecture & design knowledge | **What** is the system + **Why** was it built this way? | Developers / maintainers |
 | `AGENT_STRATEGY.md` | Operational behavior & decisions | **How** does the agent behave + **When** does it act? | Developers / maintainers |
-| `init-agent.md` | Setup protocol (Steps 0-5) | **How is a workspace instantiated?** | Any AI Agent running setup |
-| `.tailorai/Agent.md` | Runtime constitution | **What rules bind the agent at runtime?** | The AI Agent itself |
-
-> [!IMPORTANT]
-> **Maintenance rule:** When you change *structure*, edit this file. When you change *behavior*, edit `AGENT_STRATEGY.md` (and usually `.tailorai/Agent.md` too). Keeping these separate is what makes future development safe.
+| `init-agent.md` | Setup & upgrade protocol (Steps 0-5) | **How is a workspace instantiated or upgraded?** | Any AI Agent running setup |
+| `.tailorai/Architecture/PRD_TailorAI_DevLead.md` | DevLead console specification | **What is TailorAI-DevLead Console and how does it execute?** | Tooling maintainers |
+| `.tailorai/Agent.md` | Universal runtime entry router | **What rules bind the agent across Cursor, Windsurf, Claude?** | The AI Agent itself |
+| `.tailorai/HANDBOOK.md` | Engineering Operating Constitution | **What are the non-negotiable engineering rules & tracks?** | AI agents & human developers |
 
 ---
 
-## 3. Approach: Markdown-First (No Scripts)
+## 3. Approach: Markdown-First with Optional Tooling
 
 > [!IMPORTANT]
-> **All governance workflows use Markdown (`.md`) protocols — no bash scripts.**
+> **All governance workflows use Markdown (`.md`) protocols.**
 > `init-agent.md` serves as a step-by-step protocol executed directly by any AI Agent.
-
-### Markdown vs. Bash Scripts
-| Bash Script | Markdown Protocol |
-|-------------|-------------------|
-| Requires specific terminal environment | Executable by any LLM AI Agent |
-| Rigid and harder to customize | Easily editable markdown files |
-| Executes all-or-nothing | Step-by-step control with user checkpoints |
-| Difficult rollback on failure | Independent, repeatable steps |
+> Tooling scripts (such as `scripts/build-explorer.js`) are 100% optional developer utilities requiring zero npm dependencies.
 
 ---
 
@@ -55,215 +48,138 @@ This template ships with **two master reference files** at the root, plus the ru
 
 ```text
 TailorAI-DevLead/
-├── AGENT_BLUEPRINT.md              # ← THIS FILE (architecture & knowledge base)
-├── AGENT_STRATEGY.md                # Operational behavior & decision reference
-├── init-agent.md                    # Master setup protocol (Steps 0-5)
+├── AGENT_BLUEPRINT.md                    # Architecture & knowledge base (What + Why)
+├── AGENT_STRATEGY.md                     # Operational behavior & decision reference (How + When)
+├── init-agent.md                         # Master setup & upgrade protocol (Steps 0-5)
+├── README.md                             # Repository overview & quick start
+├── LICENSE                               # Open-source license
+├── scripts/
+│   └── build-explorer.js                 # Standalone offline doc explorer generator
+├── docs/
+│   └── architecture/
+│       └── PRD_TailorAI_DevLead.md       # TailorAI-DevLead console PRD
 │
-└── .tailorai/                              # Governance Workspace Template
-    ├── Agent.md                     # Universal AI constitution (stack-agnostic)
-    ├── ACTIVE_TASKS.md              # In-progress tasks register
-    ├── PROJECT_MAP.md               # Knowledge base master index
-    ├── README.md                    # Workspace guide
+└── .tailorai/                            # Distributable Governance Workspace Template
+    ├── Agent.md                          # Universal entry router & critical invariants
+    ├── HANDBOOK.md                       # Engineering constitution & Dual-Track rules
+    ├── ACTIVE_TASKS.md                   # In-progress task registry
+    ├── PROJECT_MAP.md                    # Master index with Fast-Track history
+    ├── README.md                         # Workspace guide
+    ├── index.html                        # Compiled offline knowledge explorer
     │
-    ├── Architecture/
-    │   ├── Architecture_Questions.md  # Setup helper questionnaire
-    │   ├── Technical_Architecture.md  # Technical architecture template
-    │   ├── PRD.md                     # Product requirements template
-    │   └── Visual_Identity.md         # Visual identity template
+    ├── Engineering/                      # Core Engineering Roles & Operational Runbooks
+    │   ├── Lead_Developer.md             # Agent 1: Full-stack execution lead
+    │   ├── Code_Review.md                # Agent 2: Architecture & compliance auditor
+    │   └── Runbooks/                     # Operational execution guides
+    │       ├── Local_Setup.md            # Local dev environment setup
+    │       ├── Commands.md               # CLI commands reference
+    │       ├── Production.md             # Production deployment specifications
+    │       └── CI_CD_Pipeline.md         # Continuous integration & deployment
     │
-    ├── Protocols/                   # Universal operational protocols
+    ├── QA/                               # Decoupled On-Demand Quality Model
+    │   ├── Agent_Testing.md              # Agent 3: QA Automation Lead
+    │   ├── DEFECTS_LOG.md                # Master defect triage & findings register
+    │   └── TEST_PLAN.md                  # Decoupled test matrix & scenario registry
+    │
+    ├── Protocols/                        # Universal Operational Protocols (11 total)
     │   ├── API_Contracts.md
+    │   ├── Audit_Log_Protocol.md
+    │   ├── Deployment_Protocol.md
+    │   ├── Environment_Variables_Protocol.md
     │   ├── Git_Workflow.md
+    │   ├── I18n_Protocol.md
     │   ├── Security_Protocol.md
+    │   ├── Storage_Protocol.md
     │   ├── Testing_Standards.md
-    │   └── Deployment_Protocol.md
+    │   ├── Theme_Protocol.md
+    │   └── WebSocket_Protocol.md
     │
-    ├── Skills/                      # Universal AI skills
-    │   ├── CleanCode_Skill.md         # Clean code & SRP principles
-    │   ├── Security_Skill.md          # Security best practices
-    │   ├── Performance_Skill.md       # Performance optimization
-    │   ├── Code_Review_Skill.md       # Code review methodology
-    │   ├── Designer_Skill.md         # UI/UX principles
-    │   └── Knowledge_Builder_Skill.md # Step 4 task conversion protocol
+    ├── Architecture/                     # Project Architecture Specifications (Templates)
+    │   ├── PRD_TailorAI_DevLead.md       # TailorAI-DevLead console PRD
+    │   ├── Architecture_Questions.md     # Setup questionnaire
+    │   ├── Technical_Architecture.md     # Stack, data layer & folder topology
+    │   ├── PRD.md                        # Product requirements template
+    │   └── Visual_Identity.md            # Design system & tokens template
     │
-    ├── Audits/                      # Universal audit prompts
-    │   ├── CleanCode_Audit_Prompt.md   # Code quality audit
-    │   ├── Security_Audit_Prompt.md    # Security vulnerability audit
-    │   ├── TailorAI_Folder_Audit_Prompt.md   # Workspace consistency audit
-    │   └── Knowledge_Base_Verification.md # KB map verification
+    ├── Skills/                           # Specialized Developer Skills
+    │   ├── CleanCode_Skill.md
+    │   ├── Code_Review_Skill.md
+    │   ├── Designer_Skill.md
+    │   ├── Knowledge_Builder_Skill.md
+    │   ├── Performance_Skill.md
+    │   └── Security_Skill.md
     │
-    ├── Brand/
-    │   └── Brand_Guide_Template.md    # Brand identity guide template
+    ├── Audits/                           # Automated Verification Prompts
+    │   ├── CleanCode_Audit_Prompt.md
+    │   ├── Knowledge_Base_Verification.md
+    │   ├── Security_Audit_Prompt.md
+    │   └── TailorAI_Folder_Audit_Prompt.md
     │
-    └── Tasks/
-        ├── Task_Template.md           # Standard task template
-        ├── feature/
-        ├── bugfix/
-        ├── refactor/
+    ├── Brand/                            # Visual assets template
+    │   └── Brand_Guide_Template.md
+    │
+    └── Tasks/                            # Task workspace
+        ├── Task_Template.md
         ├── backend/
         ├── frontend/
+        ├── bugfix/
+        ├── feature/
+        ├── refactor/
         ├── security/
-        └── migration/                  # Legacy migration task directory
+        └── migration/
 ```
-
-> **Runtime-only directories** (created during setup, not shipped as part of the template):
-> - `.tailorai/Architecture/Project_Scan_Report.md` — generated in Step 0.
-> - `.tailorai/Archive_Legacy/` — created in Step 4 if legacy tasks exist.
-> - `.tailorai/Tasks/migration/migration_queue.md` + `migration_report.md` — created in Step 4.
 
 ---
 
-## 5. The 6-Step Setup Workflow (Steps 0-5)
+## 5. The Setup & Upgrade Workflow
 
-This is the summary. The authoritative, executable steps live in `init-agent.md`.
+The authoritative, executable steps live in `init-agent.md`.
 
 | Step | Name | Mode | Deliverable |
-|------|------|------|-------------|
-| 0 | Pre-flight Project Scan | Automated | `.tailorai/Architecture/Project_Scan_Report.md` |
-| 1 | Base Workspace Initialization | Automated | Populated core `.tailorai/` files + placeholder replacement |
-| 2 | Architecture Documentation | Manual / Guided | `Technical_Architecture.md`, `PRD.md`, `Visual_Identity.md` |
-| 3 | Legacy Rules Migration | Interactive | `.tailorai/Tasks/migration/step3_rules_migration_report.md` |
-| 4 | Knowledge Base & Task Migration | Batch Processing | `.tailorai/Archive_Legacy/`, `migration_queue.md`, migrated tasks |
-| 5 | Stack-Specific Audits & Skills | Automated | Stack-specific skill + audit files in `.tailorai/Skills/` & `.tailorai/Audits/` |
-
-**Path variants:**
-- **New project (no legacy):** Step 0 → 1 → 2 → 5
-- **Existing project (legacy agent/tasks):** Step 0 → 1 → 2 → 3 → 4 → 5
+|---|---|---|---|
+| **0** | Pre-flight Project Scan | Automated | `.tailorai/Architecture/Project_Scan_Report.md` |
+| **1** | Base Workspace Initialization | Automated | Populated core `.tailorai/` files + placeholder replacement |
+| **2** | Architecture Documentation | Manual / Guided | `Technical_Architecture.md`, `PRD.md`, `Visual_Identity.md` |
+| **3** | Legacy Rules Migration | Interactive | Migrates non-TailorAI rules into `.tailorai/Agent.md` |
+| **3B** | Upgrade to Enterprise OS v2 | Automated | Upgrades legacy TailorAI v1 projects to v2 without data loss |
+| **4** | Knowledge Base & Task Migration | Batch | Batch migrates legacy task archives into `Tasks/` & `PROJECT_MAP.md` |
+| **5** | Stack-Specific Audits & Skills | Automated | Adds stack-specific skills/audits matching project manifest |
 
 ---
 
 ## 6. Design Decisions Log
 
-Every structural or strategic choice is recorded here so future maintainers know *why* the system is shaped this way. Append-only — never delete rows.
-
 | # | Decision | Choice | Rationale |
-|---|----------|--------|-----------|
-| 1 | Overall Approach | Markdown-First (No bash scripts) | Accessible to any AI agent, easily editable |
-| 2 | Legacy Task Depth | Full Task File + PROJECT_MAP Entry | Rich historic context preserved |
-| 3 | Architecture Files | Manual + Helper Questionnaire | Architecture requires intentional design input |
-| 4 | Protocol Templates | Generic, placeholder-driven | Applicable to any project stack |
-| 5 | Brand Directory | Always included with template | Brand guidelines essential across projects |
-| 6 | Stack & Language | 100% Agnostic — Configured at init | Template usable on any codebase |
-| 7 | Knowledge Builder | Separate skill protocol (Step 4) | Semantic conversion requires LLM batching |
-| 8 | Base Skills & Audits | Included in Step 1 | Universal software principles apply everywhere |
-| 9 | Custom Skills & Audits | Added in Step 5 per stack | Tech-specific checks added dynamically |
-| 10 | Step 3 Conflicts | Prompt user explicitly | Never guess user intent on rule conflicts |
-| 11 | Language Uniformity | 100% English across all files | Unified global standard |
-| 12 | Documentation Split | Separated Blueprint (what/why) from Strategy (how/when) | Behavior and architecture evolve independently |
-| 13 | Master File Naming | `AGENT_BLUEPRINT.md` + `AGENT_STRATEGY.md` | Clear, prefix-grouped names signaling agent-system docs |
-| 14 | Placeholder Strategy | `{{TOKEN}}` tokens filled at Step 1, undetected tokens left in place + flagged | Keeps templates agnostic while preventing invented values |
-| 15 | Resumable Migration | `migration_queue.md` with `[ ]/[x]` checkboxes | Interrupted sessions resume without data loss |
-| 16 | Context Hard Cap | Max 2-3 files per request | Protects token budget and reasoning quality |
-| 17 | Knowledge_Builder Exposure | Not exposed as a slash command | It is a batch runtime protocol, not interactive reference |
-| 18 | Governance Folder Naming | `.tailorai/` (hidden lowercase dotfolder) | Lowercase dotfolder is standard across developer tools (`.github`, `.vscode`, `.cursor`) and keeps target project root clean |
+|---|---|---|---|
+| 1 | Overall Approach | Markdown-First (No bash scripts) | Accessible to any AI agent, easily editable across platforms. |
+| 2 | Legacy Task Depth | Full Task File + PROJECT_MAP Entry | Rich historic context preserved. |
+| 3 | Architecture Files | Manual + Helper Questionnaire | Architecture requires intentional human design input. |
+| 4 | Protocol Templates | Generic, placeholder-driven with defaults | Applicable to any project stack out-of-the-box. |
+| 5 | Brand Directory | Included with template | Brand guidelines essential across UI projects. |
+| 6 | Stack & Language | 100% Agnostic — Configured at init | Template usable on any codebase (PHP, JS/TS, Python, Go, Rust). |
+| 7 | Knowledge Builder | Separate skill protocol (Step 4) | Semantic conversion requires LLM batching. |
+| 8 | Base Skills & Audits | Included in Step 1 | Universal software principles apply everywhere. |
+| 9 | Custom Skills & Audits | Added in Step 5 per stack | Tech-specific checks added dynamically. |
+| 10 | Step 3 Conflicts | Prompt user explicitly | Never guess user intent on rule conflicts. |
+| 11 | Language Uniformity | 100% English across all template files | Unified global standard. |
+| 12 | Documentation Split | Separated Blueprint from Strategy | Behavior and architecture evolve independently. |
+| 13 | Master File Naming | `AGENT_BLUEPRINT.md` + `AGENT_STRATEGY.md` | Clear, prefix-grouped names signaling agent-system docs. |
+| 14 | Placeholder Strategy | `{{TOKEN}}` filled at Step 1, defaults provided | Keeps templates agnostic while preventing invented values. |
+| 15 | Resumable Migration | `migration_queue.md` with checkboxes | Interrupted sessions resume without data loss. |
+| 16 | Context Hard Cap | Max 2-3 files per request | Protects token budget and reasoning quality. |
+| 17 | Knowledge_Builder Exposure | Not exposed as a slash command | It is a batch runtime protocol, not interactive reference. |
+| 18 | Governance Folder Naming | `.tailorai/` (hidden lowercase dotfolder) | Standard across developer tools (`.github`, `.vscode`, `.cursor`). |
+| 19 | Dual-Track Task Engine | Fast-Track (≤ 3 files) vs Full Protocol | Eliminates documentation friction for micro-fixes while maintaining architectural rigor. |
+| 20 | Decoupled QA Model | Agent 1 writes `⬜`, Agent 3 executes | Eliminates test execution latency during code development loops. |
+| 21 | Universal IDE Router | `Agent.md` in `.tailorai/` root | Preserves 100% compatibility with Cursor, Windsurf, Claude Code, and Antigravity. |
+| 22 | Console PRD Location | `.tailorai/Architecture/PRD_TailorAI_DevLead.md` | Standardized inside `.tailorai/Architecture/` alongside all system specifications. |
+| 23 | Offline Explorer Tool | CommonJS `scripts/build-explorer.js` | Zero npm dependency script compiling an offline HTML viewer (< 100KB). |
 
 ---
 
-## 7. Placeholder Contract (Complete Reference)
+## 7. Placeholder Contract Summary
 
-All `{{PLACEHOLDER}}` tokens used across template files. The agent replaces these during **Step 1** of `init-agent.md`. If a value cannot be auto-detected, the token is left in place and flagged for manual completion — the agent never invents a value.
-
-### 7.1 Identity & Stack
-| Token | Replaced From | Used In |
-|-------|---------------|---------|
-| `{{PROJECT_NAME}}` | Project config / manifest | `Agent.md`, `PROJECT_MAP.md`, `README.md`, all `Architecture/`, `Protocols/`, `Audits/`, `Brand/` headers |
-| `{{TECH_STACK}}` | Detected stack summary | `Agent.md` |
-| `{{BACKEND_FRAMEWORK}}` | Manifest inspection | `Technical_Architecture.md` |
-| `{{FRONTEND_FRAMEWORK}}` | Manifest inspection | `Technical_Architecture.md` |
-| `{{DATABASE}}` | Config / manifest | `Technical_Architecture.md` |
-
-### 7.2 Commands
-| Token | Replaced From | Used In |
-|-------|---------------|---------|
-| `{{TEST_COMMAND}}` | `package.json` scripts / `pytest` / `php artisan test` / `go test` | `Testing_Standards.md`, `Deployment_Protocol.md` |
-| `{{LOCAL_DEV_COMMAND}}` | `package.json` scripts / `artisan serve` / `manage.py runserver` | `Deployment_Protocol.md` |
-| `{{TYPE_CHECK_COMMAND}}` | `tsc` / `mypy` / `phpstan` etc. | `Testing_Standards.md` |
-| `{{LINT_TYPECHECK_COMMAND}}` | Lint + typecheck combined | `Deployment_Protocol.md` |
-
-### 7.3 API Contracts
-| Token | Used In |
-|-------|---------|
-| `{{API_RESPONSE_ENVELOPE_EXAMPLE}}` | `API_Contracts.md` |
-| `{{API_ERROR_ENVELOPE_EXAMPLE}}` | `API_Contracts.md` |
-| `{{HTTP_STATUS_CODES_SPEC}}` | `API_Contracts.md` |
-| `{{PAGINATION_SCHEMA_EXAMPLE}}` | `API_Contracts.md` |
-
-### 7.4 Security
-| Token | Used In |
-|-------|---------|
-| `{{AUTH_MECHANISM_SPEC}}` | `Security_Protocol.md` |
-| `{{AUTHORIZATION_SPEC}}` | `Security_Protocol.md` |
-| `{{TENANT_ISOLATION_SPEC}}` | `Security_Protocol.md` |
-| `{{VALIDATION_ENGINE_SPEC}}` | `Security_Protocol.md` |
-| `{{FILE_UPLOAD_SECURITY_SPEC}}` | `Security_Protocol.md` |
-| `{{ENCRYPTION_SPEC}}` | `Security_Protocol.md` |
-| `{{RATE_LIMITING_SPEC}}` | `Security_Protocol.md` |
-| `{{ANTI_BOT_SPEC}}` | `Security_Protocol.md` |
-
-### 7.5 Testing Scopes
-| Token | Used In |
-|-------|---------|
-| `{{UNIT_TEST_SCOPE}}` | `Testing_Standards.md` |
-| `{{INTEGRATION_TEST_SCOPE}}` | `Testing_Standards.md` |
-| `{{E2E_TEST_SCOPE}}` | `Testing_Standards.md` |
-
-### 7.6 Deployment
-| Token | Used In |
-|-------|---------|
-| `{{STAGING_DEPLOY_PROCESS}}` | `Deployment_Protocol.md` |
-| `{{PRODUCTION_DEPLOY_PROCESS}}` | `Deployment_Protocol.md` |
-
-### 7.7 Visual Identity & Design Tokens
-| Token | Used In |
-|-------|---------|
-| `{{COLOR_PRIMARY}}` | `Visual_Identity.md` |
-| `{{COLOR_SECONDARY}}` | `Visual_Identity.md` |
-| `{{COLOR_ACCENT}}` | `Visual_Identity.md` |
-| `{{COLOR_DANGER}}` | `Visual_Identity.md` |
-| `{{COLOR_BG}}` | `Visual_Identity.md` |
-| `{{COLOR_SURFACE}}` | `Visual_Identity.md` |
-| `{{FONT_FAMILY}}` | `Visual_Identity.md` |
-| `{{HEADING_SCALE}}` | `Visual_Identity.md` |
-| `{{BODY_SCALE}}` | `Visual_Identity.md` |
-| `{{LAYOUT_DIRECTION}}` | `Visual_Identity.md` |
-| `{{GRID_BASELINE}}` | `Visual_Identity.md` |
-| `{{BORDER_RADIUS_SCALE}}` | `Visual_Identity.md` |
-
-> [!NOTE]
-> **Maintenance rule:** When you add a new `{{TOKEN}}` to any template, add it to the table above **and** to the Step 1 replacement list in `init-agent.md`. An undocumented placeholder will be silently missed during setup.
-
----
-
-## 8. File Responsibility Matrix
-
-A quick map of "who owns what" so maintainers know exactly where to make a change.
-
-| Concern | Owner File | Notes |
-|---------|-----------|-------|
-| Agent identity & critical rules | `.tailorai/Agent.md` §1 | Stack-agnostic; never embed stack specifics |
-| Context loading rules | `.tailorai/Agent.md` §2 | Behavioral detail in `AGENT_STRATEGY.md` §3 |
-| Task creation & execution | `.tailorai/Agent.md` §3 | 8-stage cycle in `AGENT_STRATEGY.md` §4 |
-| Skills slash commands | `.tailorai/Agent.md` §3C | Mapping in `AGENT_STRATEGY.md` §7.3 |
-| Architecture templates | `.tailorai/Architecture/*` | Filled in Step 1 (auto) + Step 2 (manual) |
-| Operational protocols | `.tailorai/Protocols/*` | Placeholder-driven; filled in Step 1 |
-| Universal skills | `.tailorai/Skills/*` | Reference knowledge; consulted on demand |
-| Audit prompts | `.tailorai/Audits/*` | Read-only diagnostics; never mutate code |
-| Task file format | `.tailorai/Tasks/Task_Template.md` | 3-section standard: Objective / Steps / Reality |
-| Setup workflow | `init-agent.md` | The only file that mutates the workspace structure |
-
----
-
-## 9. Changelog
-
-| Date | Change |
-|------|--------|
-| 2026-08-12 | Initial plan setup (bash script approach) |
-| 2026-08-12 | Shifted to Markdown-First approach (`init-agent.md`) |
-| 2026-08-12 | Added Step 0 Pre-flight scan and 6-step workflow |
-| 2026-08-12 | Refactored all protocols & visual identity to dynamic placeholders |
-| 2026-08-12 | Abstracted all skills to be 100% stack/language agnostic |
-| 2026-08-12 | Unified language across ALL markdown files to 100% English |
-| 2026-08-12 | Renamed `PLAN.md` → `AGENT_BLUEPRINT.md`; added Documentation Topology (§2), File Responsibility Matrix (§8), and complete Placeholder Contract (§7). |
-| 2026-08-12 | Extracted operational behavior into `AGENT_STRATEGY.md` (How/When), leaving this file as the What/Why knowledge base. |
-| 2026-08-12 | Added decisions #12-#17 to the Design Decisions Log (doc split, naming, placeholder strategy, resumable migration, context cap, KB-builder exposure). |
-| 2026-08-12 | Renamed governance folder `TailorAI/` to `.tailorai/` (Decision #18). Updated all blueprint references, setup protocols, and matrices. |
+Core tokens replaced during Step 1 of `init-agent.md`:
+* **Identity:** `{{PROJECT_NAME}}`, `{{TECH_STACK}}`, `{{DATABASE}}`
+* **Commands:** `{{LOCAL_DEV_COMMAND}}`, `{{TYPE_CHECK_COMMAND}}`, `{{LINT_COMMAND}}`, `{{TEST_COMMAND}}`, `{{E2E_TEST_COMMAND}}`, `{{BUILD_COMMAND}}`
+* All specialized protocol templates ship with battle-tested fallback defaults so downstream projects run without mandatory token configuration.
